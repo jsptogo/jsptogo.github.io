@@ -8,6 +8,6 @@
 </head>
 <body>
 <% session.invalidate(); %>
-<%    response.sendRedirect("axhome.html"); %>
+<% response.sendRedirect("axhome.html"); %>
 </body>
 </html>
