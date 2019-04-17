@@ -1,6 +1,6 @@
 <%@ page language="java" contentType="text/html; charset=utf-8" pageEncoding="utf-8"%>
 <% request.setCharacterEncoding("utf-8"); %>
-<!DOCTYPE html>  <!-- axlogout.jsp --> 
+<!DOCTYPE html>  <!--  axlogout.jsp --> 
 <html>
 <head>
 <meta charset="UTF-8">
