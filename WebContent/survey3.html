@@ -21,16 +21,7 @@
 <section  data-role="content" class="content">
 <form  action="http://jsptogo.herokuapp.com/jspsrc/survey3.jsp"   method="post">
 
-
 <div data-role="fieldcontain">
-
-<fieldset>
-  <h3>응답자 정보</h3>
-  <input type="text" name="input1" id="input1" placeholder="이름을 입력하세요"/>
-  <input type="number" name="input2" id="input2" placeholder="나이를 입력하세요"/>
-  <input type="email" name="input3" id="input3" placeholder="이메일을 입력하세요"/>
-  <input type="tel" name="input4" id="input4" placeholder="전화번호를 입력하세요"/>
-</fieldset>
 
 <fieldset  data-role="controlgroup"  data-type="horizontal">
   <h3>성별</h3>
@@ -82,11 +73,15 @@
   <input type="radio" id="score035" name="question03" value="5">
 </fieldset>
 
+<fieldset>
+  <h3>응답자 정보</h3>
+  <input type="text" name="input1" id="input1" placeholder="이름을 입력하세요"/>
+  <input type="number" name="input2" id="input2" placeholder="나이를 입력하세요"/>
+  <input type="email" name="input3" id="input3" placeholder="이메일을 입력하세요"/>
+  <input type="tel" name="input4" id="input4" placeholder="전화번호를 입력하세요"/>
+</fieldset>
 
 </div>
-
-
-
 <button type="submit"  data-role="button">설문완료</button>
 </form>
 </section>
