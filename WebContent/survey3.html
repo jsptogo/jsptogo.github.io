@@ -20,34 +20,24 @@
 </header>
 <section  data-role="content" class="content">
 <form  action="http://jsptogo.herokuapp.com/jspsrc/survey3.jsp"   method="post">
-<fieldset  data-role="controlgroup" data-type="horizontal">
-  <h2>설문 1. 생각은 사고를 낳고 사고는 행동을 낳는다에 동의하십니까?</h2>
-  <label for="scorex1">매우동의</label>
-  <input type="radio" id="scorex1" name="question01" value="1">
-  <label for="scorex2">동의</label>
-  <input type="radio" id="scorex2" name="question01" value="2">
-  <label for="scorex3">중립</label>
-  <input type="radio" id="scorex3" name="question01" value="3">
-  <label for="scorex4">이의</label>
-  <input type="radio" id="scorex4" name="question01" value="4">
-  <label for="scorex5">매우이의</label>
-  <input type="radio" id="scorex5" name="question01" value="5">
-</fieldset>
-
-<fieldset  data-role="controlgroup" data-type="horizontal">
-  <h2>설문 2. 생각은 사고를 낳고 사고는 행동을 낳는다에 동의하십니까?</h2>
-  <label for="scorex1">매우동의</label>
-  <input type="radio" id="scorex1" name="question01" value="1">
-  <label for="scorex2">동의</label>
-  <input type="radio" id="scorex2" name="question01" value="2">
-  <label for="scorex3">중립</label>
-  <input type="radio" id="scorex3" name="question01" value="3">
-  <label for="scorex4">이의</label>
-  <input type="radio" id="scorex4" name="question01" value="4">
-  <label for="scorex5">매우이의</label>
-  <input type="radio" id="scorex5" name="question01" value="5">
-</fieldset>
-
+		<div data-role="fieldcontain">
+		<fieldset data-role="controlgroup">
+			<legend>연락매체</legend>
+			<input type="checkbox" name="type1" id="type1" value="1" checked="checked"/>
+			<label for="type1">e-mail</label>
+			<input type="checkbox" name="type2" id="type2" value="2" />
+			<label for="type2">address</label>
+			<input type="checkbox" name="type3" id="type3" value="3" checked="checked"/>
+			<label for="type3">phone</label>
+		</fieldset>
+		</div>
+		<fieldset data-role="controlgroup" data-type="horizontal">
+			<legend>성별</legend>
+			<input type="checkbox" name="gtype1" id="gtype1" value="m" checked="checked"/>
+			<label for="gtype1">남성</label>
+			<input type="checkbox" name="gtype 2" id="gtype2" value="f" />
+			<label for="gtype2">여성</label>
+		</fieldset>
 <button type="submit"  data-role="button">설문완료</button>
 </form>
 </section>
