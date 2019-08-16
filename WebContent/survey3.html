@@ -22,21 +22,35 @@
 <form  action="http://jsptogo.herokuapp.com/jspsrc/survey3.jsp"   method="post">
 
 
-		<label>(1)도시이름
-			<input type="text" name="return" id="txt1">
-		</label>
-		<div data-role="fieldcontain" class="ui-disabled">			
-			<label for="txt2">(2)도시이름</label>			
-			<input type="text" name="return" id="txt2" data-role="none">
-		</div>	
-		<div data-role="fieldcontain">
-			<label for="txt3">(3)도시이름</label>
-			<input type="text" name="return" id="txt3" value="서울">
-		</div>		
-		<div data-role="fieldcontain">
-			<label for="txt4">(3)도시이름</label>
-			<input type="text" name="return" id="txt4" value="대전">
-		</div>		
+<div data-role="fieldcontain">
+<fieldset  data-role="controlgroup"  data-type="horizontal">
+  <h2>설문 1. 생각은 사고를 낳고 사고는 행동을 낳는다에 동의하십니까?</h2>
+  <label for="score011">매우동의</label>
+  <input type="radio" id="score011" name="question01" value="1">
+  <label for="score012">동의</label>
+  <input type="radio" id="score012" name="question01" value="2">
+  <label for="score013">중립</label>
+  <input type="radio" id="score013" name="question01" value="3">
+  <label for="score014">이의</label>
+  <input type="radio" id="score014" name="question01" value="4">
+  <label for="score015">매우이의</label>
+  <input type="radio" id="score015" name="question01" value="5">
+</fieldset>
+
+<fieldset  data-role="controlgroup"  data-type="horizontal">
+  <h2>설문 2. 생각은 사고를 낳고 사고는 행동을 낳는다에 동의하십니까?</h2>
+  <label for="score021">매우동의</label>
+  <input type="radio" id="score021" name="question02" value="1">
+  <label for="score022">동의</label>
+  <input type="radio" id="score022" name="question02" value="2">
+  <label for="score023">중립</label>
+  <input type="radio" id="score023" name="question02" value="3">
+  <label for="score024">이의</label>
+  <input type="radio" id="score024" name="question02" value="4">
+  <label for="score025">매우이의</label>
+  <input type="radio" id="score025" name="question02" value="5">
+</fieldset>
+</div>
 
 
 
