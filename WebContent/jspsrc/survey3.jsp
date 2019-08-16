@@ -7,8 +7,15 @@
 <section>
   <h2>JSP form</h2>
   <section>
+    <h2>이름 : <%= request.getParameter("input1")%> <br/></h2>
+    <h2>나이 : <%= request.getParameter("input2")%> <br/></h2>
+    <h2>이메일 : <%= request.getParameter("input3")%> <br/></h2>
+    <h2>전화번호 : <%= request.getParameter("input4")%> <br/></h2>
+    <h2>성별 : <%= request.getParameter("gender")%> <br/></h2>
+
     <h2>question01 : <%= request.getParameter("question01")%> <br/></h2>
     <h2>question02 : <%= request.getParameter("question02")%> <br/></h2>
+    <h2>question03 : <%= request.getParameter("question03")%> <br/></h2>
   </section>
 </section>
 </body></html>

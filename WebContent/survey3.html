@@ -23,6 +23,23 @@
 
 
 <div data-role="fieldcontain">
+
+<fieldset>
+  <h2>응답자 정보</h2>
+  <input type="text" name="input1" id="input1" placeholder="이름을 입력하세요"/>
+  <input type="number" name="input2" id="input2" placeholder="나이를 입력하세요"/>
+  <input type="email" name="input3" id="input3" placeholder="이메일을 입력하세요"/>
+  <input type="tel" name="input4" id="input4" placeholder="전화번호를 입력하세요"/>
+</fieldset>
+
+<fieldset  data-role="controlgroup"  data-type="horizontal">
+  <h2>성별</h2>
+  <label for="desc011">여자</label>
+  <input type="radio" id="desc011" name="gender" value="1">
+  <label for="desc012">남자</label>
+  <input type="radio" id="desc012" name="gender" value="2">
+</fieldset>
+
 <fieldset  data-role="controlgroup"  data-type="horizontal">
   <h2>설문 1. 생각은 사고를 낳고 사고는 행동을 낳는다에 동의하십니까?</h2>
   <label for="score011">매우동의</label>
@@ -50,9 +67,23 @@
   <label for="score025">매우이의</label>
   <input type="radio" id="score025" name="question02" value="5">
 </fieldset>
+
+<fieldset  data-role="controlgroup"  data-type="horizontal">
+  <h2>설문 3. 정말 그렇게 생각하십니까?</h2>
+  <label for="score031">매우동의</label>
+  <input type="radio" id="score031" name="question03" value="1">
+  <label for="score032">동의</label>
+  <input type="radio" id="score032" name="question03" value="2">
+  <label for="score033">중립</label>
+  <input type="radio" id="score033" name="question03" value="3">
+  <label for="score034">이의</label>
+  <input type="radio" id="score034" name="question03" value="4">
+  <label for="score035">매우이의</label>
+  <input type="radio" id="score035" name="question03" value="5">
+</fieldset>
+
+
 </div>
-
-
 
 
 
