@@ -1,0 +1,316 @@
+<!doctype html><!-- survey3.html -->
+<html>
+<head>
+<meta charset="utf-8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+<title>헤더 문자열 1</title>
+<link rel="stylesheet" href="http://code.jquery.com/mobile/1.4.5/jquery.mobile-1.4.5.min.css" />
+<script src="http://code.jquery.com/jquery-1.11.1.min.js"></script>
+<script src="http://code.jquery.com/mobile/1.4.5/jquery.mobile-1.4.5.min.js"></script>
+<style>
+@media only screen and (max-width: 600px) {  
+     body {font-size: 16px;} 
+}
+</style>
+</head>
+<body>
+<div data-role="page">
+<header data-role="header">
+  <h1>모바일 설문</h1>
+</header>
+<section  data-role="content" class="content">
+<form  action="http://jsptogo.herokuapp.com/jspsrc/addict.jsp"   method="post">
+
+<div data-role="fieldcontain">
+
+<fieldset  data-role="controlgroup"  data-type="horizontal">
+  <h3>설문 1. 애초 생각보다 인터넷 이용시간이 길어지는가?</h3>
+  <label for="score011">매우동의</label>
+  <input type="radio" id="score011" name="question01" value="1">
+  <label for="score012">동의</label>
+  <input type="radio" id="score012" name="question01" value="2">
+  <label for="score013">중립</label>
+  <input type="radio" id="score013" name="question01" value="3">
+  <label for="score014">이의</label>
+  <input type="radio" id="score014" name="question01" value="4">
+  <label for="score015">매우이의</label>
+  <input type="radio" id="score015" name="question01" value="5">
+</fieldset>
+
+<fieldset  data-role="controlgroup"  data-type="horizontal">
+  <h3>설문 2. 인터넷 때문에 집안일(방 정리, 청소 등)을 미룬 적이 있는가?</h3>
+  <label for="score021">매우동의</label>
+  <input type="radio" id="score021" name="question02" value="1">
+  <label for="score022">동의</label>
+  <input type="radio" id="score022" name="question02" value="2">
+  <label for="score023">중립</label>
+  <input type="radio" id="score023" name="question02" value="3">
+  <label for="score024">이의</label>
+  <input type="radio" id="score024" name="question02" value="4">
+  <label for="score025">매우이의</label>
+  <input type="radio" id="score025" name="question02" value="5">
+</fieldset>
+
+<fieldset  data-role="controlgroup"  data-type="horizontal">
+  <h3>설문 3. 가족 친구와 어울리는 것보다 인터넷이 즐거운가?</h3>
+  <label for="score031">매우동의</label>
+  <input type="radio" id="score031" name="question03" value="1">
+  <label for="score032">동의</label>
+  <input type="radio" id="score032" name="question03" value="2">
+  <label for="score033">중립</label>
+  <input type="radio" id="score033" name="question03" value="3">
+  <label for="score034">이의</label>
+  <input type="radio" id="score034" name="question03" value="4">
+  <label for="score035">매우이의</label>
+  <input type="radio" id="score035" name="question03" value="5">
+</fieldset>
+
+<fieldset  data-role="controlgroup"  data-type="horizontal">
+  <h3>설문 4. 인터넷을 통해 인간관계를 만든 적이 있는가?</h3>
+  <label for="score041">매우동의</label>
+  <input type="radio" id="score041" name="question04" value="1">
+  <label for="score042">동의</label>
+  <input type="radio" id="score042" name="question04" value="2">
+  <label for="score043">중립</label>
+  <input type="radio" id="score043" name="question04" value="3">
+  <label for="score044">이의</label>
+  <input type="radio" id="score044" name="question04" value="4">
+  <label for="score045">매우이의</label>
+  <input type="radio" id="score045" name="question04" value="5">
+</fieldset>
+
+<fieldset  data-role="controlgroup"  data-type="horizontal">
+  <h3>설문 5. 인터넷을 너무 오래 한다고 불평을 들은 적이 있는가?</h3>
+  <label for="score051">매우동의</label>
+  <input type="radio" id="score051" name="question05" value="1">
+  <label for="score052">동의</label>
+  <input type="radio" id="score052" name="question05" value="2">
+  <label for="score053">중립</label>
+  <input type="radio" id="score053" name="question05" value="3">
+  <label for="score054">이의</label>
+  <input type="radio" id="score054" name="question05" value="4">
+  <label for="score055">매우이의</label>
+  <input type="radio" id="score055" name="question05" value="5">
+</fieldset>
+
+<fieldset  data-role="controlgroup"  data-type="horizontal">
+  <h3>설문 6. 인터넷 때문에 시험이나 학점을 방해받은 적이 있는가?</h3>
+  <label for="score061">매우동의</label>
+  <input type="radio" id="score061" name="question06" value="1">
+  <label for="score062">동의</label>
+  <input type="radio" id="score062" name="question06" value="2">
+  <label for="score063">중립</label>
+  <input type="radio" id="score063" name="question06" value="3">
+  <label for="score064">이의</label>
+  <input type="radio" id="score064" name="question06" value="4">
+  <label for="score065">매우이의</label>
+  <input type="radio" id="score065" name="question06" value="5">
+</fieldset>
+
+<fieldset  data-role="controlgroup"  data-type="horizontal">
+  <h3>설문 7. 다른 할 일을 놔두고 E메일 체크를 먼저 한 적이 있는가?</h3>
+  <label for="score071">매우동의</label>
+  <input type="radio" id="score071" name="question07" value="1">
+  <label for="score072">동의</label>
+  <input type="radio" id="score072" name="question07" value="2">
+  <label for="score073">중립</label>
+  <input type="radio" id="score073" name="question07" value="3">
+  <label for="score074">이의</label>
+  <input type="radio" id="score074" name="question07" value="4">
+  <label for="score075">매우이의</label>
+  <input type="radio" id="score075" name="question07" value="5">
+</fieldset>
+
+<fieldset  data-role="controlgroup"  data-type="horizontal">
+  <h3>설문 8. 인터넷 때문에 일의 생산성과 창의성이 떨어진 적이 있는가?</h3>
+  <label for="score081">매우동의</label>
+  <input type="radio" id="score081" name="question08" value="1">
+  <label for="score082">동의</label>
+  <input type="radio" id="score082" name="question08" value="2">
+  <label for="score083">중립</label>
+  <input type="radio" id="score083" name="question08" value="3">
+  <label for="score084">이의</label>
+  <input type="radio" id="score084" name="question08" value="4">
+  <label for="score085">매우이의</label>
+  <input type="radio" id="score085" name="question08" value="5">
+</fieldset>
+
+<fieldset  data-role="controlgroup"  data-type="horizontal">
+  <h3>설문 9. 인터넷으로 주로 뭘 보느냐는 질문에 사실을 숨긴 적이 있는가?</h3>
+  <label for="score091">매우동의</label>
+  <input type="radio" id="score091" name="question09" value="1">
+  <label for="score092">동의</label>
+  <input type="radio" id="score092" name="question09" value="2">
+  <label for="score093">중립</label>
+  <input type="radio" id="score093" name="question09" value="3">
+  <label for="score094">이의</label>
+  <input type="radio" id="score094" name="question09" value="4">
+  <label for="score095">매우이의</label>
+  <input type="radio" id="score095" name="question09" value="5">
+</fieldset>
+
+<fieldset  data-role="controlgroup"  data-type="horizontal">
+  <h3>설문 10. 괴로운 일이 있을 때 인터넷으로 스스로를 달래본 적이 있는가?</h3>
+  <label for="score101">매우동의</label>
+  <input type="radio" id="score101" name="question10" value="1">
+  <label for="score102">동의</label>
+  <input type="radio" id="score102" name="question10" value="2">
+  <label for="score103">중립</label>
+  <input type="radio" id="score103" name="question10" value="3">
+  <label for="score104">이의</label>
+  <input type="radio" id="score104" name="question10" value="4">
+  <label for="score105">매우이의</label>
+  <input type="radio" id="score105" name="question10" value="5">
+</fieldset>
+
+<fieldset  data-role="controlgroup"  data-type="horizontal">
+  <h3>설문 11. 다음 번 인터넷 접속 시기를 예정해놓는가?</h3>
+  <label for="score111">매우동의</label>
+  <input type="radio" id="score111" name="question11" value="1">
+  <label for="score112">동의</label>
+  <input type="radio" id="score112" name="question11" value="2">
+  <label for="score113">중립</label>
+  <input type="radio" id="score113" name="question11" value="3">
+  <label for="score114">이의</label>
+  <input type="radio" id="score114" name="question11" value="4">
+  <label for="score115">매우이의</label>
+  <input type="radio" id="score115" name="question11" value="5">
+</fieldset>
+
+<fieldset  data-role="controlgroup"  data-type="horizontal">
+  <h3>설문 12. 인터넷이 없는 세상은 지루하고 따분하고 재미없을 것이라고 생각하는가?</h3>
+  <label for="score121">매우동의</label>
+  <input type="radio" id="score121" name="question12" value="1">
+  <label for="score122">동의</label>
+  <input type="radio" id="score122" name="question12" value="2">
+  <label for="score123">중립</label>
+  <input type="radio" id="score123" name="question12" value="3">
+  <label for="score124">이의</label>
+  <input type="radio" id="score124" name="question12" value="4">
+  <label for="score125">매우이의</label>
+  <input type="radio" id="score125" name="question12" value="5">
+</fieldset>
+
+<fieldset  data-role="controlgroup"  data-type="horizontal">
+  <h3>설문 13. 인터넷 사용 도중 방해받았을 때 화를 낸 적이 있는가?</h3>
+  <label for="score131">매우동의</label>
+  <input type="radio" id="score131" name="question13" value="1">
+  <label for="score132">동의</label>
+  <input type="radio" id="score132" name="question13" value="2">
+  <label for="score133">중립</label>
+  <input type="radio" id="score133" name="question13" value="3">
+  <label for="score134">이의</label>
+  <input type="radio" id="score134" name="question13" value="4">
+  <label for="score135">매우이의</label>
+  <input type="radio" id="score135" name="question13" value="5">
+</fieldset>
+
+<fieldset  data-role="controlgroup"  data-type="horizontal">
+  <h3>설문 14. 심야에 인터넷을 하느라 늦게 잠든 적이 있는가?</h3>
+  <label for="score141">매우동의</label>
+  <input type="radio" id="score141" name="question14" value="1">
+  <label for="score142">동의</label>
+  <input type="radio" id="score142" name="question14" value="2">
+  <label for="score143">중립</label>
+  <input type="radio" id="score143" name="question14" value="3">
+  <label for="score144">이의</label>
+  <input type="radio" id="score144" name="question14" value="4">
+  <label for="score145">매우이의</label>
+  <input type="radio" id="score145" name="question14" value="5">
+</fieldset>
+
+<fieldset  data-role="controlgroup"  data-type="horizontal">
+  <h3>설문 15. 오프라인 상태에서 인터넷을 사용하는 상상을 해본 적이 있는가?</h3>
+  <label for="score151">매우동의</label>
+  <input type="radio" id="score151" name="question15" value="1">
+  <label for="score152">동의</label>
+  <input type="radio" id="score152" name="question15" value="2">
+  <label for="score153">중립</label>
+  <input type="radio" id="score153" name="question15" value="3">
+ <label for="score154">이의</label>
+  <input type="radio" id="score154" name="question15" value="4">
+  <label for="score155">매우이의</label>
+  <input type="radio" id="score155" name="question15" value="5">
+</fieldset>
+
+<fieldset  data-role="controlgroup"  data-type="horizontal">
+  <h3>설문 16. 인터넷 사용 도중 '몇 분만 더하고 끝내자'고 마음먹어 본 적이 있는가?</h3>
+  <label for="score161">매우동의</label>
+  <input type="radio" id="score161" name="question16" value="1">
+  <label for="score162">동의</label>
+  <input type="radio" id="score162" name="question16" value="2">
+  <label for="score163">중립</label>
+  <input type="radio" id="score163" name="question16" value="3">
+  <label for="score164">이의</label>
+  <input type="radio" id="score164" name="question16" value="4">
+  <label for="score165">매우이의</label>
+  <input type="radio" id="score165" name="question16" value="5">
+</fieldset>
+
+<fieldset  data-role="controlgroup"  data-type="horizontal">
+  <h3>설문 17. 인터넷 사용 시간을 줄이려 시도했다가 실패한 적이 있는가?</h3>
+  <label for="score171">매우동의</label>
+  <input type="radio" id="score171" name="question17" value="1">
+  <label for="score172">동의</label>
+  <input type="radio" id="score172" name="question17" value="2">
+  <label for="score173">중립</label>
+  <input type="radio" id="score173" name="question17" value="3">
+  <label for="score174">이의</label>
+  <input type="radio" id="score174" name="question17" value="4">
+  <label for="score175">매우이의</label>
+  <input type="radio" id="score175" name="question17" value="5">
+</fieldset>
+
+<fieldset  data-role="controlgroup"  data-type="horizontal">
+  <h3>설문 18. 다른 사람에게 인터넷 사용 시간을 속인 적이 있는가?</h3>
+  <label for="score181">매우동의</label>
+  <input type="radio" id="score181" name="question18" value="1">
+  <label for="score182">동의</label>
+  <input type="radio" id="score182" name="question18" value="2">
+ <label for="score183">중립</label>
+  <input type="radio" id="score183" name="question18" value="3">
+  <label for="score184">이의</label>
+  <input type="radio" id="score184" name="question18" value="4">
+  <label for="score185">매우이의</label>
+  <input type="radio" id="score185" name="question18" value="5">
+</fieldset>
+
+<fieldset  data-role="controlgroup"  data-type="horizontal">
+  <h3>설문 19. 가족 친구들과 어울려 외출하는 시간보다 인터넷 사용 시간이 더 많은가?</h3>
+  <label for="score191">매우동의</label>
+  <input type="radio" id="score191" name="question19" value="1">
+  <label for="score192">동의</label>
+  <input type="radio" id="score192" name="question19" value="2">
+  <label for="score193">중립</label>
+  <input type="radio" id="score193" name="question19" value="3">
+  <label for="score194">이의</label>
+  <input type="radio" id="score194" name="question19" value="4">
+  <label for="score195">매우이의</label>
+  <input type="radio" id="score195" name="question19" value="5">
+</fieldset>
+
+<fieldset  data-role="controlgroup"  data-type="horizontal">
+  <h3>설문 20. 우울하거나 긴장되었다가 인터넷 접속 후 괜찮아진 적이 있는가?</h3>
+  <label for="score201">매우동의</label>
+  <input type="radio" id="score201" name="question20" value="1">
+  <label for="score202">동의</label>
+  <input type="radio" id="score202" name="question20" value="2">
+  <label for="score203">중립</label>
+  <input type="radio" id="score203" name="question20" value="3">
+  <label for="score204">이의</label>
+  <input type="radio" id="score204" name="question20" value="4">
+  <label for="score205">매우이의</label>
+  <input type="radio" id="score205" name="question20" value="5">
+</fieldset>
+
+
+</div>
+<button type="submit"  data-role="button">설문완료</button>
+</form>
+</section>
+
+<footer  data-role="footer" data-id="footerid1" data-position="fixed">
+  <h4>20XX Made by Korea. All rights reserved.</h4>
+</footer>
+</div>
+</body></html>
