@@ -8,6 +8,7 @@
   <h2>JSP form</h2>
   <section>
     <h2>question01 : <%= request.getParameter("question01")%> <br/></h2>
+    <h2>question02 : <%= request.getParameter("question02")%> <br/></h2>
   </section>
 </section>
 </body></html>
