@@ -20,31 +20,28 @@
 </header>
 <section  data-role="content" class="content">
 <form  action="http://jsptogo.herokuapp.com/jspsrc/survey3.jsp"   method="post">
-	<div data-role="fieldcontain">
-		<fieldset data-role="controlgroup">
-			<legend>연락매체</legend>
-			<input type="checkbox" name="type1" id="type1" value="1" checked="checked"/>
-			<label for="type1">e-mail</label>
-			<input type="checkbox" name="type2" id="type2" value="2" />
-			<label for="type2">address</label>
-			<input type="checkbox" name="type3" id="type3" value="3" checked="checked"/>
-			<label for="type3">phone</label>
-		</fieldset>
-		<fieldset data-role="controlgroup" data-type="horizontal">
-			<legend>성별</legend>
-			<input type="checkbox" name="gtype1" id="gtype1" value="m" checked="checked"/>
-			<label for="gtype1">남성</label>
-			<input type="checkbox" name="gtype 2" id="gtype2" value="f" />
-			<label for="gtype2">여성</label>
-		</fieldset>
-		<fieldset data-role="controlgroup" data-type="horizontal">
-			<legend>성별</legend>
-			<input type="checkbox" name="gtype1" id="gtype1" value="m" checked="checked"/>
-			<label for="gtype1">남성</label>
-			<input type="checkbox" name="gtype 2" id="gtype2" value="f" />
-			<label for="gtype2">여성</label>
-		</fieldset>
-	</div>
+
+
+		<label>(1)도시이름
+			<input type="text" name="return" id="txt1">
+		</label>
+		<div data-role="fieldcontain" class="ui-disabled">			
+			<label for="txt2">(2)도시이름</label>			
+			<input type="text" name="return" id="txt2" data-role="none">
+		</div>	
+		<div data-role="fieldcontain">
+			<label for="txt3">(3)도시이름</label>
+			<input type="text" name="return" id="txt3" value="서울">
+		</div>		
+		<div data-role="fieldcontain">
+			<label for="txt4">(3)도시이름</label>
+			<input type="text" name="return" id="txt4" value="대전">
+		</div>		
+
+
+
+
+
 <button type="submit"  data-role="button">설문완료</button>
 </form>
 </section>
