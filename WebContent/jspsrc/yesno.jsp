@@ -5,9 +5,10 @@
 <title>폼 테스트</title></head>
 <body>
 <section>
-  <h2>JSP form</h2>
+  <h3>입력 결과</h3>
   <section>
-    <h2>입력한 내용 : <%= request.getParameter("question01")%> <br/></h2>
+    <h3>입력한 내용 : <%= request.getParameter("question01")%> <br/></h3>
+    <h3>전화번호 : <%= request.getParameter("input4")%> <br/></h3>
   </section>
 </section>
 </body></html>
