@@ -52,15 +52,15 @@
       int a20= Integer.parseInt(request.getParameter("question20"));
       int a = a1+a2+a3+a4+a5+a6+a7+a8+a9+a10+a11+a12+a13+a14+a15+a16+a17+a18+a19+a20;      
       if(a >= 80) {
-          out.println("중독 중증");
-          out.println("인터넷이 일상생활에 심각한 문제를 야기할 수 있음");
-          out.println("어떤 악영향과 문제점이 있는지 진단해야 함");
+          out.println("당신은 중독 중증입니다");
+          out.println("- 인터넷이 일상생활에 심각한 문제를 야기할 수 있음");
+          out.println("- 어떤 악영향과 문제점이 있는지 진단해야 함");
       } else if(a<80 && a>=50) {
-          out.println("중독 초기");
-          out.println("인터넷 때문에 겪는 문제가 일상생활에 끼치는 악영향을 고려해야함");
+          out.println("당신은 중독 초기입니다");
+          out.println("- 인터넷 때문에 겪는 문제가 일상생활에 끼치는 악영향을 고려해야함");
       } else {
-          out.println("평범한 이용자");
-          out.println("가끔 인터넷을 오래 쓰기도 하지만 자기 통제가 가능");
+          out.println("당신은 평범한 이용자입니다");
+          out.println("- 가끔 인터넷을 오래 쓰기도 하지만 자기 통제가 가능함");
       }
     %>
 
