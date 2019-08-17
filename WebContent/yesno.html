@@ -1,0 +1,50 @@
+<!doctype html><!-- yesno.html -->
+<html>
+<head>
+<meta charset="utf-8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+<title>헤더 문자열 1</title>
+<link rel="stylesheet" href="http://code.jquery.com/mobile/1.4.5/jquery.mobile-1.4.5.min.css" />
+<script src="http://code.jquery.com/jquery-1.11.1.min.js"></script>
+<script src="http://code.jquery.com/mobile/1.4.5/jquery.mobile-1.4.5.min.js"></script>
+<style>
+@media only screen and (max-width: 600px) {  
+     body {font-size: 16px;} 
+}
+</style>
+</head>
+<body>
+<div data-role="page">
+<header data-role="header">
+  <h1>모바일 설문</h1>
+</header>
+<section  data-role="content" class="content">
+<form  action="http://jsptogo.herokuapp.com/jspsrc/yesno.jsp"   method="post">
+
+<div data-role="fieldcontain">
+
+<div class="ui-body ui-body-a">
+<fieldset  data-role="controlgroup"  data-type="horizontal">
+  <h3>성별</h3>
+  <label for="desc011">찬성</label>
+  <input type="radio" id="desc011" name="gender" value="1">
+  <label for="desc012">반대</label>
+  <input type="radio" id="desc012" name="gender" value="0">
+</fieldset>
+</div>
+
+<fieldset>
+  <h3>응답자 정보</h3>
+  <input type="tel" name="input4" id="input4" placeholder="전화번호를 입력하세요"/>
+</fieldset>
+
+</div>
+<button type="submit"  data-role="button">설문완료</button>
+</form>
+</section>
+
+<footer  data-role="footer" data-id="footerid1" data-position="fixed">
+  <h4>20XX Made by Korea. All rights reserved.</h4>
+</footer>
+</div>
+</body></html>

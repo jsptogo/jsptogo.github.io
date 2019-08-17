@@ -1,776 +1,363 @@
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
-<html xmlns="http://www.w3.org/1999/xhtml">
+<!doctype html><!-- addict.html -->
+<html>
 <head>
-<meta http-equiv="Content-Type" content="text/html; charset=euc-kr" />
-<title>ÀÇ°ß Á¶»ç</title>
-<script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.6.4/jquery.min.js"></script>
-<style type="text/css">
-	*{margin:0;padding:0;}
-    body { background-color:#666;}
-    em { font-weight:bold; font-style:normal; letter-spacing: 1px;}
-    ul {*zoom:1; list-style:none;margin:0 auto;}
-    li {padding:0.4%;}
-    dl {height:40px;width:500px;}
-    * html li{height:20px;}
-    li ul li{height:20px;}
-    .hastextarea {height:160px;padding-top:15px;}
-    span{padding-left:5px;}
-    table {width: 95%;}
-    table > thead{text-align: center;}
-    table thead th,  table tbody td {border: 1px solid #D0D0D0;text-align:center;}
-    table .evenrow {background-color: #EEF1F4;}
-    table caption {display:none;}
-    thead tr td {font-weight:bold;width:10%; letter-spacing: 1px;}
-    tbody tr td {letter-spacing: 1px;}
-    tbody tr{border: 0.1px solid;}
-    tbody .subtitle{font-weight:bold;}
-    thead tr td {width:15%}
-    thead tr td.gubn{width:27%}
-    #wrap{ width:750px; margin:0 auto; font-size:12px; background-color:white; }
-    #header {margin-top:15px;text-align: center; background-color:#fff;}
-    #header img{width:750px;}
-    #footer{text-align: center;}
-	#container {width:95%; margin:0 auto; }
-	.btnGroup { text-align:right; padding:20px;}
-	.issueBefore {background:  url("http://www.itfind.or.kr/itfind/pollResources/images/before.png") left 50% no-repeat; border:none; width:105px; height:30px; color:#496088; font-weight:bold;}
-	.issueSubmit {background:  url("http://www.itfind.or.kr/itfind/pollResources/images/next.png") right 50% no-repeat; border:none; width:105px; height:30px; color:#496088; font-weight:bold; cursor:pointer;}
-	.issueGroup>div{ padding-top:15px;}
-	.issueGroup{padding-top:20px;}
-    .issuehead{width:95%;}
-	.hidden {display:none;} 
-	.end{float:none;padding-left:35px;padding-top:35px;}
-	.left20 { margin-left:20px;}
-	p.title{margin: 0 15px 0 5px; padding: 8px; border: 1px solid rgb(0, 0, 0); background: rgb(0, 0, 0); color: #fff; font-weight: bold; font-size: 14px; text-align: center; margin-bottom: 0.4em;}
-    /* Çì´õ°ª¿¡ ´ëÇÑ css Àû¿ë */
-    div.issueGroupHeader > p{
-    border:double; font-size:14px; width:85%; vertical-align: middle;  margin: auto; height: 500px; padding: 20px 15px 0px 20px; letter-spacing: 1px; word-spacing: 1px;
-    }
-    div.issue6 ul li {text-align: left;}
-    /* ±âº» Ç¥(¼¼·ÎÅ×ÀÌºí)   */
- table.chart { border-collapse:collapse; width:100%; font-size:12px;line-height:18px;border-top:2px solid #498fd0;margin-bottom:10px;}
- table.chart th,  table.chart td {border: 1px solid #D0D0D0;padding:5px 10px;text-align:center;}
- table.chart thead th {background:#e3eaf1;border:1px solid #D0D0D0;text-align:center;color:#000000;}
- table.chart tbody th{color:#000;}
- table.chart tbody td{background:#fff;}
- table.chart tbody strong{color:#000;}
- table.chart td.alL{text-align:left;}
- table.chart td.bg{background:#F5F5F5;}
- table.chart tbody th.bg{background:#F5F5F5;color:#000;} 
- table.chart tfoot{color:#000;}
- div.issue1 table tr td ul li{
- font-size: 0.9em;
- }
- .text-left{text-align: left;}
- .text-rigth{text-align: right;}
- .text-center{text-align: center;}
- /*ÆùÆ®ÅÂ±× ±ÛÀÚÅ©±â Á¶Àý */
-div font{
- font-weight:bold;
- font-size:1em;
- }
- .tdWtih10{
-    width: 10%; 
- }   
- .tdWtih8{
-    width: 8%; 
- }   
- .tdWtih9{
-    width: 9%; 
- }   
- .tdWtih5{
-    width: 5%; 
- }   
+<meta charset="utf-8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+<title>í—¤ë” ë¬¸ìžì—´ 1</title>
+<link rel="stylesheet" href="http://code.jquery.com/mobile/1.4.5/jquery.mobile-1.4.5.min.css" />
+<script src="http://code.jquery.com/jquery-1.11.1.min.js"></script>
+<script src="http://code.jquery.com/mobile/1.4.5/jquery.mobile-1.4.5.min.js"></script>
+<style>
+@media only screen and (max-width: 600px) {  
+  body {font-size: 15px;} 
+}
 </style>
-
-<script type="text/javascript">
-$(document).ready(function(){
-       
-       $('input[name=issue3]').change(function(){
-           var name ="#issue3_12";
-           inputOpenNClose(name);
-       });
-       $('input[name=issue4]').change(function(){
-           var name ="#issue4_4";
-           inputOpenNClose(name);
-       });
-       $('input[name=issue5]').change(function(){
-           var name ="#issue5_5";
-           inputOpenNClose(name);
-       });
-       $('input[name=issue7]').change(function(){
-           var name ="#issue7_6";
-           inputOpenNClose(name);
-       });
-       $('input[name=issue8]').change(function(){
-           var name ="#issue8_6";
-           inputOpenNClose(name);
-       });
-       $('input[name=issue9]').change(function(){
-           var name ="#issue9_6";
-           inputOpenNClose(name);
-       });
-       $('input[name=issue12]').change(function(){
-           var name ="#issue12_8";
-           inputOpenNClose(name);
-       });
-       
-       $(".divide1").css("display", "none");
-       $(".divide2").css("display", "none");
-       $(".divide3").css("display", "none");
-       
-       //Á¶°Ç¿¡ µû¸¥ Ç×¸ñ Á¶Àý
-       $('input[name=issue1]').change(function(){
-           if($(this).val() == '2'){
-        	   $(".divide1").css("display", "none");
-        	   $(".divide2").css("display", "none");
-        	   $(".divide3").css("display", "block");
-           }else{
-        	   $(".divide1").css("display", "block");
-        	   $(".divide2").css("display", "none");
-        	   $(".divide3").css("display", "none");
-           }
-           $('input[name=issue2]').attr('checked', false);
-           $('input[name=issue3]').attr('checked', false);
-           $('input[name=issue4]').attr('checked', false);
-           $('input[name=issue5]').attr('checked', false);
-           $('input[name=issue6]').attr('checked', false);
-           $('input[name=issue7]').attr('checked', false);
-           $('input[name=issue8]').attr('checked', false);
-           $('input[name=issue9]').attr('checked', false);
-           $('input[name=issue10]').attr('checked', false);
-           $('input[name=issue11]').attr('checked', false);
-           $('input[name=issue12]').attr('checked', false);
-       });
-       
-       $('input[name=issue6]').change(function(){
-           if($(this).val() == '1' || $(this).val() == '2'){
-        	   $(".divide2").css("display", "block");
-        	   $(".divide3").css("display", "block");
-           }else{
-        	   $(".divide2").css("display", "none");
-        	   $(".divide3").css("display", "block");
-           }
-           $('input[name=issue7]').attr('checked', false);
-           $('input[name=issue8]').attr('checked', false);
-           $('input[name=issue9]').attr('checked', false);
-           $('input[name=issue10]').attr('checked', false);
-           $('input[name=issue11]').attr('checked', false);
-           $('input[name=issue12]').attr('checked', false);
-       });
-});
-	
-function pollsubmit(obj){
-	hiddenSet();
-}
-//±âÅ¸ ¿­°í ´Ý±â
-function inputOpenNClose(name){
-    if($(name).prop("checked")){
-        $(name+"_text").attr("readonly",false).attr("disabled",false); //ÀÔ·Â°¡´É
-        $(name+"_text").focus();
-    }else{
-        $(name+"_text").attr("disabled",true).attr("readonly",false);
-        $(name+"_text").val("");
-    }
-}
-function hiddenSet() {
-    var data1="";
-    var data3="";
-        //¹®3-12
-        $("#submitform>#subjective01").val($("#issue3_12_text").val());
-        //¹®4-4
-        $("#submitform>#subjective02").val($("#issue4_4_text").val());        
-      	//¹®5-5
-        $("#submitform>#subjective03").val($("#issue5_5_text").val());
-      	//¹®7-6
-        $("#submitform>#subjective04").val($("#issue7_6_text").val());
-      	//¹®8-6
-        $("#submitform>#subjective05").val($("#issue8_6_text").val());
-      	//¹®9-6
-        $("#submitform>#subjective06").val($("#issue9_6_text").val());
-      	//¹®12-8
-        $("#submitform>#subjective07").val($("#issue12_8_text").val());
-      
-      	//¹®1
-        $("#submitform>#objective01").val($(".issue1 input[name=issue1]:checked").val());
-        //¹®2
-        $("#submitform>#objective02").val($(".issue2 input[name=issue2]:checked").val());
-        //¹®3
-        $("#submitform>#objective03").val($(".issue3 input[name=issue3]:checked").val());
-        //¹®4
-        $("#submitform>#objective04").val($(".issue4 input[name=issue4]:checked").val());
-        //¹®5
-        $("#submitform>#objective05").val($(".issue5 input[name=issue5]:checked").val());
-        //¹®6
-        $("#submitform>#objective06").val($(".issue6 input[name=issue6]:checked").val());
-        //¹®7
-        $("#submitform>#objective07").val($(".issue7 input[name=issue7]:checked").val());
-        //¹®8
-        $("#submitform>#objective08").val($(".issue8 input[name=issue8]:checked").val());
-        //¹®9
-        $("#submitform>#objective09").val($(".issue9 input[name=issue9]:checked").val());
-        //¹®10
-        $("#submitform>#objective10").val($(".issue10 input[name=issue10]:checked").val());
-      	//¹®11
-        $("#submitform>#objective11").val($(".issue11 input[name=issue11]:checked").val());
-      	//¹®12
-        //$("#submitform>#objective12").val($(".issue12 input[name=issue12]:checked").val());
-      	
-      	//¹® 12 Ã¼Å©¹Ú½ºÀÓ
-             	
-      	var issue12Checkbox = $("input:checkbox[name='issue12']:checked");
-      	var issue12Val = '';
-      	if(issue12Checkbox.length != '2'){
-      		alert('12¹ø Ç×¸ñÀº 2°¡Áö¸¦ °ñ¶ó ÁÖ¼¼¿ä.');
-      		return;
-      	}
-      	
-      	issue12Checkbox.each(function(){
-      		issue12Val = issue12Val + $(this).val()+'$$';	
-      	});
-      	$("#submitform>#objective12").val(issue12Val);
-      	
-       if($("#submitform>#objective01").val() == ''){
-		alert('1¹ø Ç×¸ñ¿¡ °ªÀ» ÀÔ·ÂÇØ ÁÖ¼¼¿ä.');
-			return;
-		}
-       
-       if($("#submitform>#objective01").val() == '1'){
-    	   if($("#submitform>#objective02").val() == ''){
-    			alert('2¹ø Ç×¸ñ¿¡ °ªÀ» ÀÔ·ÂÇØ ÁÖ¼¼¿ä.');
-    			return;
-    		}
-    		if($("#submitform>#objective03").val() == ''){
-    			alert('3¹ø Ç×¸ñ¿¡ °ªÀ» ÀÔ·ÂÇØ ÁÖ¼¼¿ä.');
-    			return;
-    		}
-    		if($("#submitform>#objective04").val() == ''){
-    			alert('4¹ø Ç×¸ñ¿¡ °ªÀ» ÀÔ·ÂÇØ ÁÖ¼¼¿ä.');
-    			return;
-    		}
-    		if($("#submitform>#objective05").val() == ''){
-    			alert('5¹ø Ç×¸ñ¿¡ °ªÀ» ÀÔ·ÂÇØ ÁÖ¼¼¿ä.');
-    			return;
-    		}
-    		if($("#submitform>#objective06").val() == ''){
-    			alert('6¹ø Ç×¸ñ¿¡ °ªÀ» ÀÔ·ÂÇØ ÁÖ¼¼¿ä.');
-    			return;
-    		}
-       }
-
-       if($("#submitform>#objective06").val() == '1' || $("#submitform>#objective06").val() == '2'){
-    	   if($("#submitform>#objective07").val() == ''){
-    			alert('7¹ø Ç×¸ñ¿¡ °ªÀ» ÀÔ·ÂÇØ ÁÖ¼¼¿ä.');
-    			return;
-    		}
-    		if($("#submitform>#objective08").val() == ''){
-    			alert('8¹ø Ç×¸ñ¿¡ °ªÀ» ÀÔ·ÂÇØ ÁÖ¼¼¿ä.');
-    			return;
-    		}
-    		if($("#submitform>#objective09").val() == ''){
-    			alert('9¹ø Ç×¸ñ¿¡ °ªÀ» ÀÔ·ÂÇØ ÁÖ¼¼¿ä.');
-    			return;
-    		}if($("#submitform>#objective10").val() == ''){
-    			alert('10¹ø Ç×¸ñ¿¡ °ªÀ» ÀÔ·ÂÇØ ÁÖ¼¼¿ä.');
-    			return;
-    		}if($("#submitform>#objective11").val() == ''){
-    			alert('11¹ø Ç×¸ñ¿¡ °ªÀ» ÀÔ·ÂÇØ ÁÖ¼¼¿ä.');
-    			return;
-    		}if($("#submitform>#objective12").val() == ''){
-    			alert('12¹ø Ç×¸ñ¿¡ °ªÀ» ÀÔ·ÂÇØ ÁÖ¼¼¿ä.');
-    			return;
-    		}
-		}
-		
-		//3¹ø ±âÅ¸ Ã¼Å©
-		if ($("#submitform>#objective03").val() == '12') {
-			if ($("#submitform>#subjective01").val() == '') {
-
-				alert('3¹ø Ç×¸ñ ±âÅ¸¿¡ °ªÀ» ÀÔ·ÂÇØ ÁÖ¼¼¿ä.');
-				return;
-			}
-		}
-		//4¹ø ±âÅ¸ Ã¼Å©
-		if ($("#submitform>#objective04").val() == '4') {
-			if ($("#submitform>#subjective02").val() == '') {
-
-				alert('4¹ø Ç×¸ñ ±âÅ¸¿¡ °ªÀ» ÀÔ·ÂÇØ ÁÖ¼¼¿ä.');
-				return;
-			}
-		}
-		//5¹ø ±âÅ¸ Ã¼Å©
-		if ($("#submitform>#objective05").val() == '5') {
-			if ($("#submitform>#subjective03").val() == '') {
-
-				alert('5¹ø Ç×¸ñ ±âÅ¸¿¡ °ªÀ» ÀÔ·ÂÇØ ÁÖ¼¼¿ä.');
-				return;
-			}
-		}
-		//7¹ø ±âÅ¸ Ã¼Å©
-		if ($("#submitform>#objective07").val() == '6') {
-			if ($("#submitform>#subjective04").val() == '') {
-
-				alert('7¹ø Ç×¸ñ ±âÅ¸¿¡ °ªÀ» ÀÔ·ÂÇØ ÁÖ¼¼¿ä.');
-				return;
-			}
-		}
-		//8¹ø ±âÅ¸ Ã¼Å©
-		if ($("#submitform>#objective08").val() == '6') {
-			if ($("#submitform>#subjective05").val() == '') {
-
-				alert('8¹ø Ç×¸ñ ±âÅ¸¿¡ °ªÀ» ÀÔ·ÂÇØ ÁÖ¼¼¿ä.');
-				return;
-			}
-		}
-		//9¹ø ±âÅ¸ Ã¼Å©
-		if ($("#submitform>#objective09").val() == '6') {
-			if ($("#submitform>#subjective06").val() == '') {
-
-				alert('9¹ø Ç×¸ñ ±âÅ¸¿¡ °ªÀ» ÀÔ·ÂÇØ ÁÖ¼¼¿ä.');
-				return;
-			}
-		}
-		
-		//12¹ø ±âÅ¸ Ã¼Å©
-		if ($("#submitform>#objective12").val() == '8') {
-			if ($("#submitform>#subjective07").val() == '') {
-				alert('12¹ø Ç×¸ñ ±âÅ¸¿¡ °ªÀ» ÀÔ·ÂÇØ ÁÖ¼¼¿ä.');
-				return;
-			}
-		}
-		if (confirm("ÀÛ¼ºÀ» ¿Ï·á ÇÏ½Ã°Ú½À´Ï±î?")) {
-			form1.submit();
-		} else {
-			return;
-		}
-	}
-</script>
 </head>
-<body> 
-<div id="wrap">
-	<div id="header">
-        <p class="title">ÀÇ°ß Á¶»ç</p>
-    </div>
-	<div id="container">
-		
-<div class="section1">
-	<div class="issueGroup">
-        <p class="title" style="text-align:left;background:white;color:#000">
-       ¾È³çÇÏ¼¼¿ä<br/><br/>
-  ¿©·¯ºÐÀ» ´ë»óÀ¸·Î ¼³¹®Á¶»ç¸¦ ½Ç½ÃÇÏ°íÀÚ ÇÕ´Ï´Ù.
-  <br/><br/>
-  º» ¼³¹®À» ÀÛ¼ºÇÏ±â À§ÇÑ ¼Ò¿ä ½Ã°£Àº ¾à 5ºÐ Á¤µµ·Î ¿¹»óµË´Ï´Ù. ¹Ù»Ú½Ã°ÚÁö¸¸ Àá½Ã¸¸ ½Ã°£À» ³»½Ã¾î ¼³¹®¿¡ ÀÀÇØ ÁÖ½Ã¸é ´ë´ÜÈ÷ °¨»çÇÏ°Ú½À´Ï´Ù. 
-  ¼öÁýµÈ °³ÀÎ Á¤º¸´Â ¿ÜºÎ¿¡ Àý´ë °ø°³µÇÁö ¾ÊÀ¸¸ç Á¶»ç °á°ú´Â ¿¬±¸¿ë ±âÃÊ ÀÚ·á·Î¸¸ »ç¿ëµÉ °ÍÀÔ´Ï´Ù.
-  <br/><br/>
-  º» ¼³¹®°ú °ü·ÃÇÏ¿© ±Ã±ÝÇÏ½Å Á¡Àº È«±æµ¿À¸·Î ¹®ÀÇÇØ ÁÖ½Ã±â ¹Ù¶ø´Ï´Ù.
-        </p>
-        
-        <p class="title" style="margin-top:20px;">
-        ¸ÕÀú ÀÚ·á ºÐ·ù¸¦ À§ÇØ ±ÍÇÏÀÇ °³ÀÎÀû »çÇ×¿¡ ´ëÇØ¼­ ¸î °¡Áö ¿©Âã°Ú½À´Ï´Ù.
-        </p>
-        <div class="issue1">
-            <ul>
-                <li class="issuehead">
-                    <em>1. ±ÍÇÏ´Â ÇöÀç ±â¾÷¿¡ Á¾»çÇÏ°í °è½Ê´Ï±î?</em>
-                </li>
-                <li>
-                    <ul>
-                        <li>
-                            <input type="radio" id="issue1_1" name="issue1" value="1"/><label for="issue1_1">¿¹</label>
-                        </li>
-                        <li>
-                            <input type="radio" id="issue1_2" name="issue1" value="2" /><label for="issue1_2">¾Æ´Ï¿ä</label>
-                        </li>
-                    </ul>
-                </li>
-            </ul>
-        </div>
-        
-        <div class="divide1">
-	        <div class="issue2">
-	            <ul>
-	                <li class="issuehead">
-	                    <em>2. ±â¾÷¿¡ Á¾»çÇÏ°í °è½Ã´Ù¸é, ÇöÀç Á¾»çÇÏ°í °è½Å ±â¾÷Àº ´ÙÀ½ Áß ¾î¶² À¯Çü¿¡ ÇØ´çÇÏ½Ê´Ï±î?</em>
-	                </li>
-	                <li>
-	                    <ul>
-	                        <li>
-	                            <input type="radio" id="issue2_1" name="issue2" value="1"/><label for="issue2_1"> ICT ´ë±â¾÷ (¿¬¸ÅÃâ 1Á¶ ¿ø ÀÌ»ó)</label>
-	                        </li>
-	                        <li>
-	                            <input type="radio" id="issue2_2" name="issue2" value="2" /><label for="issue2_2"> ICT Áß°ß±â¾÷ (¿¬¸ÅÃâ 1Ãµ¾ï ¿ø ÀÌ»ó)</label>
-	                        </li>
-	                        <li>
-	                            <input type="radio" id="issue2_3" name="issue2" value="3" /><label for="issue2_3"> ICT Áß¼Ò±â¾÷ (¿¬¸ÅÃâ 100~1,000¾ï ¿ø)</label>
-	                        </li>
-	                        <li>
-	                            <input type="radio" id="issue2_4" name="issue2" value="4" /><label for="issue2_4"> ICT ½ºÅ¸Æ®¾÷ (¿¬¸ÅÃâ 100¾ï ¿ø ¹Ì¸¸)</label>
-	                        </li>
-	                    </ul>
-	                </li>
-	            </ul>
-	        </div>
-	         <div class="issue3">
-	            <ul>
-	                <li class="issuehead">
-	                    <em>3. ÇöÀç ±â¾÷ÀÇ ±¸Ã¼ÀûÀÎ ¾÷Á¾ À¯ÇüÀº ´ÙÀ½ Áß ¹«¾ùÀÔ´Ï±î?</em>
-	                </li>
-	                <li>
-	                	<ul>
-			                <li>
-			                    <div style="float:left;width:300px;"><input type="radio" id="issue3_1" name="issue3" value="1" /><label for="issue3_1" style="width:80px;"> ¹ÝµµÃ¼ (ºÎÇ°/¼ÒÀç/Àåºñ Æ÷ÇÔ)</label></div>
-			                    <div><input type="radio" id="issue3_2" name="issue3" value="2" /><label for="issue3_2"> µð½ºÇÃ·¹ÀÌ ÆÐ³Î (ºÎÇ°/¼ÒÀç/Àåºñ Æ÷ÇÔ)</label></div>
-			                </li>
-			                <li>    
-			                    <div style="float:left;width:300px;"><input type="radio" id="issue3_3" name="issue3" value="3" /><label for="issue3_3"> ±âÅ¸ ºÎÇ°/¼ÒÀç (PCB/ÄÉÀÌ½º µî)</label></div>
-			                    <div><input type="radio" id="issue3_4" name="issue3" value="4" /><label for="issue3_4"> ÄÄÇ»ÆÃ ÇÏµå¿þ¾î (PC/¼­¹ö/½ºÅä¸®Áö)</label></div>
-			                </li>
-			                <li>    
-			                    <div style="float:left;width:300px;"><input type="radio" id="issue3_5" name="issue3" value="5" /><label for="issue3_5"> ³×Æ®¿öÅ© Àåºñ (±³È¯Àü¼ÛÀåºñ/Áß°è±â/¾ÈÅ×³ª)</label></div>
-			                    <div><input type="radio" id="issue3_6" name="issue3" value="6" /><label for="issue3_6"> ½º¸¶Æ®Æù/±âÅ¸Åë½Å¿ë´Ü¸»</label></div>
-			                </li>
-			                <li>    
-			                    <div style="float:left;width:300px;"><input type="radio" id="issue3_7" name="issue3" value="7" /><label for="issue3_7"> °¡Àü (TV/³ÃÀå°í/¼¼Å¹±â µî)</label></div>
-			                    <div><input type="radio" id="issue3_8" name="issue3" value="8" /><label for="issue3_8"> ¼ÒÇÁÆ®¿þ¾î</label></div>
-			                </li>
-			                <li>    
-			                    <div style="float:left;width:300px;"><input type="radio" id="issue3_9" name="issue3" value="9" /><label for="issue3_9"> IT¼­ºñ½º (SI/NI/ÄÁ¼³ÆÃ/±³À° µî)</label></div>
-			                    <div><input type="radio" id="issue3_10" name="issue3" value="10" /><label for="issue3_10"> ¹æ¼ÛÅë½Å ¼­ºñ½º</label></div>
-			                </li>
-			                <li>    
-			                    <div style="float:left;width:300px;"><input type="radio" id="issue3_11" name="issue3" value="11" /><label for="issue3_11"> ÄÜÅÙÃ÷/°ÔÀÓ/ÀÎÅÍ³Ý</label></div>
-			                    <div><input type="radio" id="issue3_12" name="issue3" value="12" /><label for="issue3_12"> ±âÅ¸</label>
-			                    (Àû¾îÁÖ½Ê½Ã¿À:<input type="text" id="issue3_12_text" name="issue3_12_text" size="20" disabled="disabled"/>)</div>
-			                </li>
-			            </ul>
-			        </li>
-	            </ul>
-	        </div>
-	        <div class="issue4">
-	            <ul>
-	                <li class="issuehead">
-	                    <em>4. ÇöÀç Á¾»çÇÏ°í °è½Å ±â¾÷¿¡¼­ ±ÍÇÏÀÇ Á÷Ã¥Àº ¾î¶»°Ô µÇ½Ê´Ï±î?</em>
-	                </li>
-	                <li>
-		                <ul>
-			                <li>
-			                    <input type="radio" id="issue4_1" name="issue4" value="1" /><label for="issue4_1"> ´ëÇ¥ ¶Ç´Â Áß¿ª</label>
-			                </li>
-			                <li>
-			                    <input type="radio" id="issue4_2" name="issue4" value="2" /><label for="issue4_2"> °í±Þ/Áß°£ °ü¸®ÀÚ</label>
-			                </li>
-			                <li>
-			                    <input type="radio" id="issue4_3" name="issue4" value="3" /><label for="issue4_3"> ½Ç¹«ÀÚ</label>
-			                </li>
-			                <li>
-			                    <input type="radio" id="issue4_4" name="issue4" value="4" /><label for="issue4_4"> ±âÅ¸</label>
-			                    (Àû¾îÁÖ½Ê½Ã¿À:<input type="text" id="issue4_4_text" name="issue4_4_text" size="20" disabled="disabled"/>)
-			                </li>
-		                </ul>
-	                </li>
-	            </ul>
-	        </div>
-	        
-	        <p class="title" style="margin-top:20px;">
-	       ±ÍÇÏÀÇ ÀÇ°ßÀ» ¿©Âã°Ú½À´Ï´Ù.
-	        </p>
-	        <div class="issue5">
-	            <ul>
-	                <li class="issuehead">
-	                    <em>5. ¸ÕÀú ±ÍÇÏ°¡ Á¾»çÇÏ°í °è½Å È¸»ç°¡ °ü°è°¡ ÀÖ´ÂÁö¸¦ ¿©Âã°Ú½À´Ï´Ù.</em>
-	                </li>
-	                <li>
-	                    <ul>
-	                        <li>
-	                            <input type="radio" id="issue5_1" name="issue5" value="1" /><label for="issue5_1"> ¼öÃâÀÔ °Å·¡ ¸ðµÎ ÇÏ°í ÀÖ´Ù.</label>
-	                        </li>
-							<li>
-	                            <input type="radio" id="issue5_2" name="issue5" value="2" /><label for="issue5_2"> ÁÖ·Î ¼öÃâ¸¸ ÇÏ°í ÀÖ´Ù.</label>
-	                        </li>
-	                        <li>
-	                            <input type="radio" id="issue5_3" name="issue5" value="3" /><label for="issue5_3"> ÁÖ·Î ¼öÀÔ¸¸ ÇÏ°í ÀÖ´Ù.</label>
-	                        </li>
-	                        <li>
-	                            <input type="radio" id="issue5_4" name="issue5" value="4" /><label for="issue5_4"> ¼öÃâÀÔ °Å·¡°¡ ¾ø´Ù.</label>
-	                        </li>
-	                        <li>
-	                            <input type="radio" id="issue5_5" name="issue5" value="5" /><label for="issue5_5"> ±âÅ¸</label>
-	                            (Àû¾îÁÖ½Ê½Ã¿À:<input type="text" id="issue5_5_text" name="issue5_5_text" size="20" disabled="disabled"/>)
-	                        </li>
-	                    </ul>
-	                </li>
-	            </ul>
-	        </div>
-	        <div class="issue6">
-	            <ul>
-	                <li class="issuehead">
-	                    <em>6. ±ÍÇÏ°¡ Á¾»çÇÏ°í °è½Å ±â¾÷¿¡ ¾î¶² ¿µÇâÀÌ ÀÖÀ» °ÍÀ¸·Î ¿¹»óÇÏ½Ê´Ï±î?</em>
-	                </li>
-	                <li>
-	                    <ul>
-	                        <li>
-	                            <input type="radio" id="issue6_1" name="issue6" value="1" /><label for="issue6_1"> ¸Å¿ì ºÎÁ¤ÀûÀÌ´Ù.</label>
-	                        </li>
-							<li>
-	                            <input type="radio" id="issue6_2" name="issue6" value="2" /><label for="issue6_2"> ¾à°£ ºÎÁ¤ÀûÀÌ´Ù.</label>
-	                        </li>
-	                        <li>
-	                            <input type="radio" id="issue6_3" name="issue6" value="3" /><label for="issue6_3"> ¾à°£ ±àÁ¤ÀûÀÌ´Ù.</label>
-	                        </li>
-	                        <li>
-	                            <input type="radio" id="issue6_4" name="issue6" value="4" /><label for="issue6_4"> ¸Å¿ì ±àÁ¤ÀûÀÌ´Ù.</label>
-	                        </li>
-	                        <li>
-	                            <input type="radio" id="issue6_5" name="issue6" value="5" /><label for="issue6_5"> ¿µÇâÀÌ ¾ø´Ù.</label>
-	                        </li>
-	                    </ul>
-	                </li>
-	            </ul>
-	        </div>
-        </div>
-        <div class="divide2">
-	        
-	        <div class="issue7">
-	            <ul>
-	                <li class="issuehead">
-	                    <em>7. ºÎÁ¤Àû ¿µÇâÀÌ ÀÖ´Ù¸é, ¾î¶² ¿µÇâÀÌ °¡Àå Å¬ °ÍÀ¸·Î ¿¹»óÇÏ½Ê´Ï±î?</em>
-	                </li>
-	                <li>
-	                    <ul>
-	                        <li>
-	                            <input type="radio" id="issue7_1" name="issue7" value="1" /><label for="issue7_1"> ¸ÅÃâ °¨¼Ò</label>
-	                        </li>
-							<li>
-	                            <input type="radio" id="issue7_2" name="issue7" value="2" /><label for="issue7_2"> ÀÌÀÍ/¼öÀÍ¼º °¨¼Ò</label>
-	                        </li>
-	                        <li>
-	                            <input type="radio" id="issue7_3" name="issue7" value="3" /><label for="issue7_3"> ½ÃÀå¿¡¼­ °æÀï·Â ÀúÇÏ</label>
-	                        </li>
-	                        <li>
-	                            <input type="radio" id="issue7_4" name="issue7" value="4" /><label for="issue7_4"> »ç¾÷ ºÒÈ®½Ç¼º/¸®½ºÅ© Áõ°¡</label>
-	                        </li>
-	                        <li>
-	                            <input type="radio" id="issue7_5" name="issue7" value="5" /><label for="issue7_5"> Á¦Á¶¿ø°¡ »ó½Â</label>
-	                        </li>
-	                        <li>
-	                            <input type="radio" id="issue7_6" name="issue7" value="6" /><label for="issue7_6"> ±âÅ¸</label>
-	                            (Àû¾îÁÖ½Ê½Ã¿À:<input type="text" id="issue7_6_text" name="issue7_6_text" size="20" disabled="disabled"/>)
-	                        </li>
-	                    </ul>
-	                </li>
-	            </ul>
-	        </div>
-	        <div class="issue8">
-	            <ul>
-	                <li class="issuehead">
-	                    <em>8. ¸ÅÃâ °¨¼Ò°¡ ¿¹»óµÈ´Ù¸é, °¨¼ÒÆøÀÌ ¾ó¸¶³ª µÉ °ÍÀ¸·Î ¿¹»óÇÏ½Ê´Ï±î?</em>
-	                </li>
-	                <li>
-	                    <ul>
-	                        <li>
-	                            <input type="radio" id="issue8_1" name="issue8" value="1" /><label for="issue8_1"> 0~-10%</label>
-	                        </li>
-							<li>
-	                            <input type="radio" id="issue8_2" name="issue8" value="2" /><label for="issue8_2"> -10% ~ -20%</label>
-	                        </li>
-	                        <li>
-	                            <input type="radio" id="issue8_3" name="issue8" value="3" /><label for="issue8_3"> -20% ~ -30%</label>
-	                        </li>
-	                        <li>
-	                            <input type="radio" id="issue8_4" name="issue8" value="4" /><label for="issue8_4"> -30% ~ -40%</label>
-	                        </li>
-	                        <li>
-	                            <input type="radio" id="issue8_5" name="issue8" value="5" /><label for="issue8_5"> -40% ~ -50%</label>
-	                        </li>
-	                        <li>
-	                            <input type="radio" id="issue8_6" name="issue8" value="6" /><label for="issue8_6"> ±âÅ¸</label>
-	                            (Àû¾îÁÖ½Ê½Ã¿À:<input type="text" id="issue8_6_text" name="issue8_6_text" size="20" disabled="disabled"/>)
-	                        </li>
-	                    </ul>
-	                </li>
-	            </ul>
-	        </div>
-	        <div class="issue9">
-	            <ul>
-	                <li class="issuehead">
-	                    <em>9. ±ÍÇÏÀÇ ±â¾÷Àº »ç¾÷ ºÒÈ®½Ç¼ºÀ» ¾î¶»°Ô ÇØ°áÇÒ °èÈ¹ÀÌ½Ê´Ï±î?</em>
-	                </li>
-	                <li>
-	                    <ul>
-	                        <li>
-	                            <input type="radio" id="issue9_1" name="issue9" value="1" /><label for="issue9_1"> ºÎÇ°/¼ÒÀç µµÀÔ¼± ´Ùº¯È­ (±¹³» Á¶´Þ)</label>
-	                        </li>
-							<li>
-	                            <input type="radio" id="issue9_2" name="issue9" value="2" /><label for="issue9_2"> ºÎÇ°/¼ÒÀç µµÀÔ¼± ´Ùº¯È­ (ÇØ¿Ü Å¸±¹°¡ Á¶´Þ)</label>
-	                        </li>
-	                        <li>
-	                            <input type="radio" id="issue9_3" name="issue9" value="3" /><label for="issue9_3"> ÀÚÃ¼°³¹ß/³»ÀçÈ­ ÃßÁø</label>
-	                        </li>
-	                        <li>
-	                            <input type="radio" id="issue9_4" name="issue9" value="4" /><label for="issue9_4"> ºÎÇ°/¼ÒÀç µðÀÚÀÎ º¯°æ</label>
-	                        </li>
-	                        <li>
-	                            <input type="radio" id="issue9_5" name="issue9" value="5" /><label for="issue9_5"> ÇöÀç º°´Ù¸¥ ´ëÀÀ¹æ¾È ¾øÀ½</label>
-	                        </li>
-	                        <li>
-	                            <input type="radio" id="issue9_6" name="issue9" value="6" /><label for="issue9_6"> ±âÅ¸</label>
-	                            (Àû¾îÁÖ½Ê½Ã¿À:<input type="text" id="issue9_6_text" name="issue9_6_text" size="20" disabled="disabled"/>)
-	                        </li>
-	                    </ul>
-	                </li>
-	            </ul>
-	        </div>
-	        <div class="issue10">
-	            <ul>
-	                <li class="issuehead">
-	                    <em>10. ±ÍÇÏ°¡ Á¾»çÇÏ°í °è½Å ±â¾÷Àº ¾ÕÀ¸·Î ¾ðÁ¦±îÁö Áö¼ÓÇÏ½Ç ¼ö ÀÖÀ» °ÍÀ¸·Î ¿¹»óÇÏ½Ê´Ï±î?</em>
-	                </li>
-	                <li>
-	                    <ul>
-	                        <li>
-	                            <input type="radio" id="issue10_1" name="issue10" value="1" /><label for="issue10_1"> 1°³¿ù ÀÌ³»</label>
-	                        </li>
-							<li>
-	                            <input type="radio" id="issue10_2" name="issue10" value="2" /><label for="issue10_2"> 1~3°³¿ù</label>
-	                        </li>
-	                        <li>
-	                            <input type="radio" id="issue10_3" name="issue10" value="3" /><label for="issue10_3"> 3~6°³¿ù</label>
-	                        </li>
-	                        <li>
-	                            <input type="radio" id="issue10_4" name="issue10" value="4" /><label for="issue10_4"> 6°³¿ù~1³â</label>
-	                        </li>
-	                        <li>
-	                            <input type="radio" id="issue10_5" name="issue10" value="5" /><label for="issue10_5"> 1³â ÀÌ»ó</label>
-	                        </li>
-	                    </ul>
-	                </li>
-	            </ul>
-	        </div>
-	        <div class="issue11">
-	            <ul>
-	                <li class="issuehead">
-	                    <em>11. ¾î´À Á¤µµÀÇ ½Ã°£ÀÌ ÇÊ¿äÇÒ °ÍÀ¸·Î ¿¹»óÇÏ½Ê´Ï±î?</em>
-	                </li>
-	                <li>
-	                    <ul>
-	                        <li>
-	                            <input type="radio" id="issue11_1" name="issue11" value="1" /><label for="issue11_1"> 6°³¿ù ÀÌ³»</label>
-	                        </li>
-							<li>
-	                            <input type="radio" id="issue11_2" name="issue11" value="2" /><label for="issue11_2"> 6°³¿ù~1³â</label>
-	                        </li>
-	                        <li>
-	                            <input type="radio" id="issue11_3" name="issue11" value="3" /><label for="issue11_3"> 1~3³â</label>
-	                        </li>
-	                        <li>
-	                            <input type="radio" id="issue11_4" name="issue11" value="4" /><label for="issue11_4"> 3~5³â</label>
-	                        </li>
-	                        <li>
-	                            <input type="radio" id="issue11_5" name="issue11" value="5" /><label for="issue11_5"> 5³â ÀÌ»ó</label>
-	                        </li>
-	                    </ul>
-	                </li>
-	            </ul>
-	        </div>
-	        <div class="issue12">
-	            <ul>
-	                <li class="issuehead">
-	                    <em>12. °¡Àå ¹Ù¶÷Á÷ÇÑ ´ëÀÀ¹æ¾ÈÀº ¹«¾ùÀÎ°¡¿ä? 
-	                    <font color="red"><u>2°¡Áö</u></font>¸¦ °ñ¶ó ÁÖ½Ê½Ã¿À.</em>
-	                </li>
-	                <li>
-	                    <ul>
-	                        <li>
-			                    <div style="float:left;width:300px;"><input type="checkbox" id="issue12_1" name="issue12" value="1" /><label for="issue12_1" style="width:80px;"> ÀÚÃ¼°³¹ß/±¹»êÈ­ RD Áö¿ø</label></div>
-			                    <div><input type="checkbox" id="issue12_2" name="issue12" value="2" /><label for="issue12_2"> ¼öÀÔ¼± ´Ùº¯È­¸¦ À§ÇÑ ¹«¿ª Áö¿ø</label></div>
-			                </li>
-			                <li>    
-			                    <div style="float:left;width:300px;"><input type="checkbox" id="issue12_3" name="issue12" value="3" /><label for="issue12_3"> ÇÇÇØ¾÷Ã¼ ±ä±Þ°æ¿µ¾ÈÁ¤ÀÚ±Ý ±ÝÀ¶ Áö¿ø</label></div>
-			                    <div><input type="checkbox" id="issue12_4" name="issue12" value="4" /><label for="issue12_4"> ¼¼±Ý°¨¸é/±ÔÁ¦¿ÏÈ­/Åë°ü¿ÏÈ­</label></div>
-			                </li>
-			                <li>    
-			                    <div style="float:left;width:300px;"><input type="checkbox" id="issue12_5" name="issue12" value="5" /><label for="issue12_5"> °ü·Ã ±¹³»ÀÎ·Â¾ç¼º/ÇØ¿ÜÀÎÀçÈ®º¸ Áö¿ø</label></div>
-			                    <div><input type="checkbox" id="issue12_6" name="issue12" value="6" /><label for="issue12_6"> ´ë±â¾÷-Áß¼Ò±â¾÷ »ó»ýÇù·Â Á¦µµ ¸¶·Ã</label></div>
-			                </li>
-			                <li>    
-			                    <div style="float:left;width:300px;"><input type="checkbox" id="issue12_7" name="issue12" value="7" /><label for="issue12_7"> ÇØ¿Ü ºÎÇ°¼ÒÀç ±â¾÷ ÀÎ¼öÇÕº´(MA) Áö¿ø</label></div>
-			                    <div><input type="checkbox" id="issue12_8" name="issue12" value="8" /><label for="issue12_8"> ±âÅ¸</label>
-			                    (Àû¾îÁÖ½Ê½Ã¿À:<input type="text" id="issue12_8_text" name="issue12_8_text" size="20" disabled="disabled"/>)</div>
-			                </li>
-	                    </ul>
-	                </li>
-	            </ul>
-	        </div>
-        </div>
-        <div class="divide3">
-	        <div class="result" style="text-align:center;margin-top:20px;">
-	        	<p>¢Â¢Â¢Â ¼³¹®¿¡ ÀÀ´äÇØ ÁÖ¼Å¼­ Áø½ÉÀ¸·Î °¨»çµå¸³´Ï´Ù ¢Â¢Â¢Â</p>
-	        </div>
-        </div>
-    </div> <!--  end of issueGroup -->
-   
-        <form id="submitform" name="form1" action="http://mtm.itfind.or.kr/poll/addPollData.htm" method="post">
-        <input type="hidden"  name="researchGroup" value="0000" />
-        <input type="hidden"    name="userEmail"     value="@"/>
-            <input type="hidden" name="objective01" id="objective01" value=""/>
-            <input type="hidden" name="objective02" id="objective02" value=""/>
-            <input type="hidden" name="objective03" id="objective03" value=""/>
-            <input type="hidden" name="objective04" id="objective04" value=""/>
-            <input type="hidden" name="objective05" id="objective05" value=""/>
-            <input type="hidden" name="objective06" id="objective06" value=""/>
-            <input type="hidden" name="objective07" id="objective07" value=""/>
-            <input type="hidden" name="objective08" id="objective08" value=""/>
-            <input type="hidden" name="objective09" id="objective09" value=""/>
-            <input type="hidden" name="objective10" id="objective10" value=""/>
-            <input type="hidden" name="objective11" id="objective11" value=""/>
-            <input type="hidden" name="objective12" id="objective12" value=""/>
-            <input type="hidden" name="objective13" id="objective13" value=""/>
-            <input type="hidden" name="objective14" id="objective14" value=""/>
-            <input type="hidden" name="objective15" id="objective15" value=""/>
-            <input type="hidden" name="objective16" id="objective16" value=""/>
-            <input type="hidden" name="objective17" id="objective17" value=""/>
-            <input type="hidden" name="objective18" id="objective18" value=""/>
-            <input type="hidden" name="objective19" id="objective19" value=""/>
-            <input type="hidden" name="objective20" id="objective20" value=""/>
-            <input type="hidden" name="objective21" id="objective21" value=""/>
-            <input type="hidden" name="objective22" id="objective22" value=""/>
-            <input type="hidden" name="objective23" id="objective23" value=""/>
-            <input type="hidden" name="objective24" id="objective24" value=""/>
-            <input type="hidden" name="objective25" id="objective25" value=""/>
-            <input type="hidden" name="objective26" id="objective26" value=""/>
-            <input type="hidden" name="objective27" id="objective27" value=""/>
-            <input type="hidden" name="objective28" id="objective28" value=""/>
-            <input type="hidden" name="objective29" id="objective29" value=""/>
-            <input type="hidden" name="objective30" id="objective30" value=""/>
-            <input type="hidden" name="objective31" id="objective31" value=""/>
-            <input type="hidden" name="objective32" id="objective32" value=""/>
-            <input type="hidden" name="objective33" id="objective33" value=""/>
-            <input type="hidden" name="objective34" id="objective34" value=""/>
-            <input type="hidden" name="objective35" id="objective35" value=""/>
-            <input type="hidden" name="objective36" id="objective36" value=""/>
-            <input type="hidden" name="objective37" id="objective37" value=""/>
-            <input type="hidden" name="objective38" id="objective38" value=""/>
-            <input type="hidden" name="objective39" id="objective39" value=""/>
-            <input type="hidden" name="objective40" id="objective40" value=""/>
-            <input type="hidden" name="objective41" id="objective41" value=""/>
-            <input type="hidden" name="objective42" id="objective42" value=""/>
-            <input type="hidden" name="objective43" id="objective43" value=""/>
-            <input type="hidden" name="objective44" id="objective44" value=""/>
-        <input type="hidden" name="subjective01" id="subjective01" value=""/>
-        <input type="hidden" name="subjective02" id="subjective02" value=""/>
-        <input type="hidden" name="subjective03" id="subjective03" value=""/>
-        <input type="hidden" name="subjective04" id="subjective04" value=""/>
-        <input type="hidden" name="subjective05" id="subjective05" value=""/>
-        <input type="hidden" name="subjective06" id="subjective06" value=""/>
-        <input type="hidden" name="subjective07" id="subjective07" value=""/>
-        <input type="hidden" name="subjective08" id="subjective08" value="itfind"/>
-        
-        <div class="btnGroup">
-            <input id="issueSubmit" class="issueSubmit" type="button" src="/resources/images/next.png" value="¼³¹® ¿Ï·á" onClick="javascript:pollsubmit();" />
-        </div>
-    </form>
-</div> <!-- end of section1 -->
+<body>
+<div data-role="page">
+<header data-role="header">
+  <h1>ëª¨ë°”ì¼ ì„¤ë¬¸</h1>
+</header>
+<section  data-role="content" class="content">
+<form  action="http://jsptogo.herokuapp.com/jspsrc/addict.jsp"   method="post">
 
-	</div><!-- end of container  -->
+<div data-role="fieldcontain">
+
+<div class="ui-body ui-body-a">
+<fieldset  data-role="controlgroup"  data-type="horizontal" data-mini="true">
+  <h3>ì„¤ë¬¸ 1. ê³„íší–ˆë˜ ì‹œê°„ë³´ë‹¤ ì¸í„°ë„· ì´ìš©ì‹œê°„ì´ ê¸¸ì–´ì§€ëŠ”ê°€?</h3>
+  <label for="score011">ë§¤ìš°ì´ì˜</label>
+  <input type="radio" id="score011" name="question01" value="1">
+  <label for="score012">ì´ì˜</label>
+  <input type="radio" id="score012" name="question01" value="2">
+  <label for="score013">ì¤‘ë¦½</label>
+  <input type="radio" id="score013" name="question01" value="3">
+  <label for="score014">ë™ì˜</label>
+  <input type="radio" id="score014" name="question01" value="4">
+  <label for="score015">ë§¤ìš°ë™ì˜</label>
+  <input type="radio" id="score015" name="question01" value="5">
+</fieldset>
 </div>
-</body>
-</html>
+
+<div class="ui-body ui-body-a">
+<fieldset  data-role="controlgroup"  data-type="horizontal" data-mini="true">
+  <h3>ì„¤ë¬¸ 2. ì¸í„°ë„· ë•Œë¬¸ì— ì§‘ì•ˆì¼(ë°© ì •ë¦¬, ì²­ì†Œ ë“±)ì„ ë¯¸ë£¬ ì ì´ ìžˆëŠ”ê°€?</h3>
+  <label for="score021">ë§¤ìš°ì´ì˜</label>
+  <input type="radio" id="score021" name="question02" value="1">
+  <label for="score022">ì´ì˜</label>
+  <input type="radio" id="score022" name="question02" value="2">
+  <label for="score023">ì¤‘ë¦½</label>
+  <input type="radio" id="score023" name="question02" value="3">
+  <label for="score024">ë™ì˜</label>
+  <input type="radio" id="score024" name="question02" value="4">
+  <label for="score025">ë§¤ìš°ë™ì˜</label>
+  <input type="radio" id="score025" name="question02" value="5">
+</fieldset>
+</div>
+
+<div class="ui-body ui-body-a">
+<fieldset  data-role="controlgroup"  data-type="horizontal" data-mini="true">
+  <h3>ì„¤ë¬¸ 3. ê°€ì¡± ì¹œêµ¬ì™€ ì–´ìš¸ë¦¬ëŠ” ê²ƒë³´ë‹¤ ì¸í„°ë„·ì´ ì¦ê±°ìš´ê°€?</h3>
+  <label for="score031">ë§¤ìš°ì´ì˜</label>
+  <input type="radio" id="score031" name="question03" value="1">
+  <label for="score032">ì´ì˜</label>
+  <input type="radio" id="score032" name="question03" value="2">
+  <label for="score033">ì¤‘ë¦½</label>
+  <input type="radio" id="score033" name="question03" value="3">
+  <label for="score034">ë™ì˜</label>
+  <input type="radio" id="score034" name="question03" value="4">
+  <label for="score035">ë§¤ìš°ë™ì˜</label>
+  <input type="radio" id="score035" name="question03" value="5">
+</fieldset>
+</div>
+
+<div class="ui-body ui-body-a">
+<fieldset  data-role="controlgroup"  data-type="horizontal" data-mini="true">
+  <h3>ì„¤ë¬¸ 4. ì¸í„°ë„·ì„ í†µí•´ ì¸ê°„ê´€ê³„ë¥¼ ë§Œë“  ì ì´ ìžˆëŠ”ê°€?</h3>
+  <label for="score041">ë§¤ìš°ì´ì˜</label>
+  <input type="radio" id="score041" name="question04" value="1">
+  <label for="score042">ì´ì˜</label>
+  <input type="radio" id="score042" name="question04" value="2">
+  <label for="score043">ì¤‘ë¦½</label>
+  <input type="radio" id="score043" name="question04" value="3">
+  <label for="score044">ë™ì˜</label>
+  <input type="radio" id="score044" name="question04" value="4">
+  <label for="score045">ë§¤ìš°ë™ì˜</label>
+  <input type="radio" id="score045" name="question04" value="5">
+</fieldset>
+</div>
+
+<div class="ui-body ui-body-a">
+<fieldset  data-role="controlgroup"  data-type="horizontal" data-mini="true">
+  <h3>ì„¤ë¬¸ 5. ì¸í„°ë„·ì„ ë„ˆë¬´ ì˜¤ëž˜ í•œë‹¤ê³  ë¶ˆí‰ì„ ë“¤ì€ ì ì´ ìžˆëŠ”ê°€?</h3>
+  <label for="score051">ë§¤ìš°ì´ì˜</label>
+  <input type="radio" id="score051" name="question05" value="1">
+  <label for="score052">ì´ì˜</label>
+  <input type="radio" id="score052" name="question05" value="2">
+  <label for="score053">ì¤‘ë¦½</label>
+  <input type="radio" id="score053" name="question05" value="3">
+  <label for="score054">ë™ì˜</label>
+  <input type="radio" id="score054" name="question05" value="4">
+  <label for="score055">ë§¤ìš°ë™ì˜</label>
+  <input type="radio" id="score055" name="question05" value="5">
+</fieldset>
+</div>
+
+<div class="ui-body ui-body-a">
+<fieldset  data-role="controlgroup"  data-type="horizontal" data-mini="true">
+  <h3>ì„¤ë¬¸ 6. ì¸í„°ë„· ë•Œë¬¸ì— ì‹œí—˜ì´ë‚˜ í•™ì ì„ ë°©í•´ë°›ì€ ì ì´ ìžˆëŠ”ê°€?</h3>
+  <label for="score061">ë§¤ìš°ì´ì˜</label>
+  <input type="radio" id="score061" name="question06" value="1">
+  <label for="score062">ì´ì˜</label>
+  <input type="radio" id="score062" name="question06" value="2">
+  <label for="score063">ì¤‘ë¦½</label>
+  <input type="radio" id="score063" name="question06" value="3">
+  <label for="score064">ë™ì˜</label>
+  <input type="radio" id="score064" name="question06" value="4">
+  <label for="score065">ë§¤ìš°ë™ì˜</label>
+  <input type="radio" id="score065" name="question06" value="5">
+</fieldset>
+</div>
+
+<div class="ui-body ui-body-a">
+<fieldset  data-role="controlgroup"  data-type="horizontal" data-mini="true">
+  <h3>ì„¤ë¬¸ 7. ë‹¤ë¥¸ í•  ì¼ì„ ë†”ë‘ê³  Eë©”ì¼ ì²´í¬ë¥¼ ë¨¼ì € í•œ ì ì´ ìžˆëŠ”ê°€?</h3>
+  <label for="score071">ë§¤ìš°ì´ì˜</label>
+  <input type="radio" id="score071" name="question07" value="1">
+  <label for="score072">ì´ì˜</label>
+  <input type="radio" id="score072" name="question07" value="2">
+  <label for="score073">ì¤‘ë¦½</label>
+  <input type="radio" id="score073" name="question07" value="3">
+  <label for="score074">ë™ì˜</label>
+  <input type="radio" id="score074" name="question07" value="4">
+  <label for="score075">ë§¤ìš°ë™ì˜</label>
+  <input type="radio" id="score075" name="question07" value="5">
+</fieldset>
+</div>
+
+<div class="ui-body ui-body-a">
+<fieldset  data-role="controlgroup"  data-type="horizontal" data-mini="true">
+  <h3>ì„¤ë¬¸ 8. ì¸í„°ë„· ë•Œë¬¸ì— ì¼ì˜ ìƒì‚°ì„±ê³¼ ì°½ì˜ì„±ì´ ë–¨ì–´ì§„ ì ì´ ìžˆëŠ”ê°€?</h3>
+  <label for="score081">ë§¤ìš°ì´ì˜</label>
+  <input type="radio" id="score081" name="question08" value="1">
+  <label for="score082">ì´ì˜</label>
+  <input type="radio" id="score082" name="question08" value="2">
+  <label for="score083">ì¤‘ë¦½</label>
+  <input type="radio" id="score083" name="question08" value="3">
+  <label for="score084">ë™ì˜</label>
+  <input type="radio" id="score084" name="question08" value="4">
+  <label for="score085">ë§¤ìš°ë™ì˜</label>
+  <input type="radio" id="score085" name="question08" value="5">
+</fieldset>
+</div>
+
+<div class="ui-body ui-body-a">
+<fieldset  data-role="controlgroup"  data-type="horizontal" data-mini="true">
+  <h3>ì„¤ë¬¸ 9. ì¸í„°ë„·ìœ¼ë¡œ ì£¼ë¡œ ë­˜ ë³´ëŠëƒëŠ” ì§ˆë¬¸ì— ì‚¬ì‹¤ì„ ìˆ¨ê¸´ ì ì´ ìžˆëŠ”ê°€?</h3>
+  <label for="score091">ë§¤ìš°ì´ì˜</label>
+  <input type="radio" id="score091" name="question09" value="1">
+  <label for="score092">ì´ì˜</label>
+  <input type="radio" id="score092" name="question09" value="2">
+  <label for="score093">ì¤‘ë¦½</label>
+  <input type="radio" id="score093" name="question09" value="3">
+  <label for="score094">ë™ì˜</label>
+  <input type="radio" id="score094" name="question09" value="4">
+  <label for="score095">ë§¤ìš°ë™ì˜</label>
+  <input type="radio" id="score095" name="question09" value="5">
+</fieldset>
+</div>
+
+<div class="ui-body ui-body-a">
+<fieldset  data-role="controlgroup"  data-type="horizontal" data-mini="true">
+  <h3>ì„¤ë¬¸ 10. ê´´ë¡œìš´ ì¼ì´ ìžˆì„ ë•Œ ì¸í„°ë„·ìœ¼ë¡œ ìŠ¤ìŠ¤ë¡œë¥¼ ë‹¬ëž˜ë³¸ ì ì´ ìžˆëŠ”ê°€?</h3>
+  <label for="score101">ë§¤ìš°ì´ì˜</label>
+  <input type="radio" id="score101" name="question10" value="1">
+  <label for="score102">ì´ì˜</label>
+  <input type="radio" id="score102" name="question10" value="2">
+  <label for="score103">ì¤‘ë¦½</label>
+  <input type="radio" id="score103" name="question10" value="3">
+  <label for="score104">ë™ì˜</label>
+  <input type="radio" id="score104" name="question10" value="4">
+  <label for="score105">ë§¤ìš°ë™ì˜</label>
+  <input type="radio" id="score105" name="question10" value="5">
+</fieldset>
+</div>
+
+<div class="ui-body ui-body-a">
+<fieldset  data-role="controlgroup"  data-type="horizontal" data-mini="true">
+  <h3>ì„¤ë¬¸ 11. ë‹¤ìŒ ë²ˆ ì¸í„°ë„· ì ‘ì† ì‹œê¸°ë¥¼ ì˜ˆì •í•´ë†“ëŠ”ê°€?</h3>
+  <label for="score111">ë§¤ìš°ì´ì˜</label>
+  <input type="radio" id="score111" name="question11" value="1">
+  <label for="score112">ì´ì˜</label>
+  <input type="radio" id="score112" name="question11" value="2">
+  <label for="score113">ì¤‘ë¦½</label>
+  <input type="radio" id="score113" name="question11" value="3">
+  <label for="score114">ë™ì˜</label>
+  <input type="radio" id="score114" name="question11" value="4">
+  <label for="score115">ë§¤ìš°ë™ì˜</label>
+  <input type="radio" id="score115" name="question11" value="5">
+</fieldset>
+</div>
+
+<div class="ui-body ui-body-a">
+<fieldset  data-role="controlgroup"  data-type="horizontal" data-mini="true">
+  <h3>ì„¤ë¬¸ 12. ì¸í„°ë„·ì´ ì—†ëŠ” ì„¸ìƒì€ ì§€ë£¨í•˜ê³  ë”°ë¶„í•˜ê³  ìž¬ë¯¸ì—†ì„ ê²ƒì´ë¼ê³  ìƒê°í•˜ëŠ”ê°€?</h3>
+  <label for="score121">ë§¤ìš°ì´ì˜</label>
+  <input type="radio" id="score121" name="question12" value="1">
+  <label for="score122">ì´ì˜</label>
+  <input type="radio" id="score122" name="question12" value="2">
+  <label for="score123">ì¤‘ë¦½</label>
+  <input type="radio" id="score123" name="question12" value="3">
+  <label for="score124">ë™ì˜</label>
+  <input type="radio" id="score124" name="question12" value="4">
+  <label for="score125">ë§¤ìš°ë™ì˜</label>
+  <input type="radio" id="score125" name="question12" value="5">
+</fieldset>
+</div>
+
+<div class="ui-body ui-body-a">
+<fieldset  data-role="controlgroup"  data-type="horizontal" data-mini="true">
+  <h3>ì„¤ë¬¸ 13. ì¸í„°ë„· ì‚¬ìš© ë„ì¤‘ ë°©í•´ë°›ì•˜ì„ ë•Œ í™”ë¥¼ ë‚¸ ì ì´ ìžˆëŠ”ê°€?</h3>
+  <label for="score131">ë§¤ìš°ì´ì˜</label>
+  <input type="radio" id="score131" name="question13" value="1">
+  <label for="score132">ì´ì˜</label>
+  <input type="radio" id="score132" name="question13" value="2">
+  <label for="score133">ì¤‘ë¦½</label>
+  <input type="radio" id="score133" name="question13" value="3">
+  <label for="score134">ë™ì˜</label>
+  <input type="radio" id="score134" name="question13" value="4">
+  <label for="score135">ë§¤ìš°ë™ì˜</label>
+  <input type="radio" id="score135" name="question13" value="5">
+</fieldset>
+</div>
+
+<div class="ui-body ui-body-a">
+<fieldset  data-role="controlgroup"  data-type="horizontal" data-mini="true">
+  <h3>ì„¤ë¬¸ 14. ì‹¬ì•¼ì— ì¸í„°ë„·ì„ í•˜ëŠë¼ ëŠ¦ê²Œ ìž ë“  ì ì´ ìžˆëŠ”ê°€?</h3>
+  <label for="score141">ë§¤ìš°ì´ì˜</label>
+  <input type="radio" id="score141" name="question14" value="1">
+  <label for="score142">ì´ì˜</label>
+  <input type="radio" id="score142" name="question14" value="2">
+  <label for="score143">ì¤‘ë¦½</label>
+  <input type="radio" id="score143" name="question14" value="3">
+  <label for="score144">ë™ì˜</label>
+  <input type="radio" id="score144" name="question14" value="4">
+  <label for="score145">ë§¤ìš°ë™ì˜</label>
+  <input type="radio" id="score145" name="question14" value="5">
+</fieldset>
+</div>
+
+<div class="ui-body ui-body-a">
+<fieldset  data-role="controlgroup"  data-type="horizontal" data-mini="true">
+  <h3>ì„¤ë¬¸ 15. ì˜¤í”„ë¼ì¸ ìƒíƒœì—ì„œ ì¸í„°ë„·ì„ ì‚¬ìš©í•˜ëŠ” ìƒìƒì„ í•´ë³¸ ì ì´ ìžˆëŠ”ê°€?</h3>
+  <label for="score151">ë§¤ìš°ì´ì˜</label>
+  <input type="radio" id="score151" name="question15" value="1">
+  <label for="score152">ì´ì˜</label>
+  <input type="radio" id="score152" name="question15" value="2">
+  <label for="score153">ì¤‘ë¦½</label>
+  <input type="radio" id="score153" name="question15" value="3">
+ <label for="score154">ë™ì˜</label>
+  <input type="radio" id="score154" name="question15" value="4">
+  <label for="score155">ë§¤ìš°ë™ì˜</label>
+  <input type="radio" id="score155" name="question15" value="5">
+</fieldset>
+</div>
+
+<div class="ui-body ui-body-a">
+<fieldset  data-role="controlgroup"  data-type="horizontal" data-mini="true">
+  <h3>ì„¤ë¬¸ 16. ì¸í„°ë„· ì‚¬ìš© ë„ì¤‘ 'ëª‡ ë¶„ë§Œ ë”í•˜ê³  ëë‚´ìž'ê³  ë§ˆìŒë¨¹ì–´ ë³¸ ì ì´ ìžˆëŠ”ê°€?</h3>
+  <label for="score161">ë§¤ìš°ì´ì˜</label>
+  <input type="radio" id="score161" name="question16" value="1">
+  <label for="score162">ì´ì˜</label>
+  <input type="radio" id="score162" name="question16" value="2">
+  <label for="score163">ì¤‘ë¦½</label>
+  <input type="radio" id="score163" name="question16" value="3">
+  <label for="score164">ë™ì˜</label>
+  <input type="radio" id="score164" name="question16" value="4">
+  <label for="score165">ë§¤ìš°ë™ì˜</label>
+  <input type="radio" id="score165" name="question16" value="5">
+</fieldset>
+</div>
+
+<div class="ui-body ui-body-a">
+<fieldset  data-role="controlgroup"  data-type="horizontal" data-mini="true">
+  <h3>ì„¤ë¬¸ 17. ì¸í„°ë„· ì‚¬ìš© ì‹œê°„ì„ ì¤„ì´ë ¤ ì‹œë„í–ˆë‹¤ê°€ ì‹¤íŒ¨í•œ ì ì´ ìžˆëŠ”ê°€?</h3>
+  <label for="score171">ë§¤ìš°ì´ì˜</label>
+  <input type="radio" id="score171" name="question17" value="1">
+  <label for="score172">ì´ì˜</label>
+  <input type="radio" id="score172" name="question17" value="2">
+  <label for="score173">ì¤‘ë¦½</label>
+  <input type="radio" id="score173" name="question17" value="3">
+  <label for="score174">ë™ì˜</label>
+  <input type="radio" id="score174" name="question17" value="4">
+  <label for="score175">ë§¤ìš°ë™ì˜</label>
+  <input type="radio" id="score175" name="question17" value="5">
+</fieldset>
+</div>
+
+<div class="ui-body ui-body-a">
+<fieldset  data-role="controlgroup"  data-type="horizontal" data-mini="true">
+  <h3>ì„¤ë¬¸ 18. ë‹¤ë¥¸ ì‚¬ëžŒì—ê²Œ ì¸í„°ë„· ì‚¬ìš© ì‹œê°„ì„ ì†ì¸ ì ì´ ìžˆëŠ”ê°€?</h3>
+  <label for="score181">ë§¤ìš°ì´ì˜</label>
+  <input type="radio" id="score181" name="question18" value="1">
+  <label for="score182">ì´ì˜</label>
+  <input type="radio" id="score182" name="question18" value="2">
+  <label for="score183">ì¤‘ë¦½</label>
+  <input type="radio" id="score183" name="question18" value="3">
+  <label for="score184">ë™ì˜</label>
+  <input type="radio" id="score184" name="question18" value="4">
+  <label for="score185">ë§¤ìš°ë™ì˜</label>
+  <input type="radio" id="score185" name="question18" value="5">
+</fieldset>
+</div>
+
+<div class="ui-body ui-body-a">
+<fieldset  data-role="controlgroup"  data-type="horizontal" data-mini="true">
+  <h3>ì„¤ë¬¸ 19. ê°€ì¡± ì¹œêµ¬ë“¤ê³¼ ì–´ìš¸ë ¤ ì™¸ì¶œí•˜ëŠ” ì‹œê°„ë³´ë‹¤ ì¸í„°ë„· ì‚¬ìš© ì‹œê°„ì´ ë” ë§Žì€ê°€?</h3>
+  <label for="score191">ë§¤ìš°ì´ì˜</label>
+  <input type="radio" id="score191" name="question19" value="1">
+  <label for="score192">ì´ì˜</label>
+  <input type="radio" id="score192" name="question19" value="2">
+  <label for="score193">ì¤‘ë¦½</label>
+  <input type="radio" id="score193" name="question19" value="3">
+  <label for="score194">ë™ì˜</label>
+  <input type="radio" id="score194" name="question19" value="4">
+  <label for="score195">ë§¤ìš°ë™ì˜</label>
+  <input type="radio" id="score195" name="question19" value="5">
+</fieldset>
+</div>
+
+<div class="ui-body ui-body-a">
+<fieldset  data-role="controlgroup"  data-type="horizontal" data-mini="true">
+  <h3>ì„¤ë¬¸ 20. ìš°ìš¸í•˜ê±°ë‚˜ ê¸´ìž¥ë˜ì—ˆë‹¤ê°€ ì¸í„°ë„· ì ‘ì† í›„ ê´œì°®ì•„ì§„ ì ì´ ìžˆëŠ”ê°€?</h3>
+  <label for="score201">ë§¤ìš°ì´ì˜</label>
+  <input type="radio" id="score201" name="question20" value="1">
+  <label for="score202">ì´ì˜</label>
+  <input type="radio" id="score202" name="question20" value="2">
+  <label for="score203">ì¤‘ë¦½</label>
+  <input type="radio" id="score203" name="question20" value="3">
+  <label for="score204">ë™ì˜</label>
+  <input type="radio" id="score204" name="question20" value="4">
+  <label for="score205">ë§¤ìš°ë™ì˜</label>
+  <input type="radio" id="score205" name="question20" value="5">
+</fieldset>
+</div>
+
+<fieldset>
+  <h3>ì‘ë‹µìž ì •ë³´</h3>
+  <input type="text" name="input1" id="input1" placeholder="ì´ë¦„ì„ ìž…ë ¥í•˜ì„¸ìš”"/>
+  <input type="number" name="input2" id="input2" placeholder="ë‚˜ì´ë¥¼ ìž…ë ¥í•˜ì„¸ìš”"/>
+  <input type="email" name="input3" id="input3" placeholder="ì´ë©”ì¼ì„ ìž…ë ¥í•˜ì„¸ìš”"/>
+  <input type="tel" name="input4" id="input4" placeholder="ì „í™”ë²ˆí˜¸ë¥¼ ìž…ë ¥í•˜ì„¸ìš”"/>
+</fieldset>
+
+</div>
+<button type="submit"  data-role="button">ì„¤ë¬¸ì™„ë£Œ</button>
+</form>
+</section>
+
+<footer  data-role="footer" data-id="footerid1" data-position="fixed">
+  <h4>20XX Made by Korea. All rights reserved.</h4>
+</footer>
+</div>
+</body></html>
