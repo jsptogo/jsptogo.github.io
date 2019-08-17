@@ -28,7 +28,7 @@
     <h3>question19 : <%= request.getParameter("question19")%> <br/></h3>
     <h3>question20 : <%= request.getParameter("question20")%> <br/></h3>
     <h3>성별 : <%= request.getParameter("gender")%> <br/></h3>
-    <h3>교욱수준 : <%= request.getParameter("edu")%> <br/></h3>
+    <h3>교육수준 : <%= request.getParameter("edu")%> <br/></h3>
     <h3>근무연수(연) : <%= request.getParameter("input1")%> <br/></h3>
     <h3>근무연수(월) : <%= request.getParameter("input2")%> <br/></h3>
     <h3>나이 : <%= request.getParameter("input3")%> <br/></h3>
