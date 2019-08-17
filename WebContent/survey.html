@@ -35,7 +35,7 @@
 <br/>
 
 
-<form  action="http://jsptogo.herokuapp.com/jspsrc/addict.jsp"   method="post">
+<form  action="http://jsptogo.herokuapp.com/jspsrc/survey.jsp"   method="post">
 
 <div data-role="fieldcontain">
 
@@ -230,17 +230,27 @@
 
 <div class="ui-body ui-body-a">
 <fieldset  data-role="controlgroup"  data-type="horizontal" data-mini="true">
-  <h3>설문 12. 인터넷이 없는 세상은 지루하고 따분하고 재미없을 것이라고 생각하는가?</h3>
-  <label for="score121">매우이의</label>
+  <h3>설문 12. 모든 점을 고려해 볼 때, 당신은 스스로 얼마나 행복하다고 생각하십니까?(10점만점)</h3>
+  <label for="score121">1</label>
   <input type="radio" id="score121" name="question12" value="1">
-  <label for="score122">이의</label>
+  <label for="score122">2</label>
   <input type="radio" id="score122" name="question12" value="2">
-  <label for="score123">중립</label>
-  <input type="radio" id="score123" name="question12" value="3" checked>
-  <label for="score124">동의</label>
+  <label for="score123">3</label>
+  <input type="radio" id="score123" name="question12" value="3">
+  <label for="score124">4</label>
   <input type="radio" id="score124" name="question12" value="4">
-  <label for="score125">매우동의</label>
+  <label for="score125">5</label>
   <input type="radio" id="score125" name="question12" value="5">
+  <label for="score126">6</label>
+  <input type="radio" id="score126" name="question12" value="6" checked>
+  <label for="score127">7</label>
+  <input type="radio" id="score127" name="question12" value="7">
+  <label for="score128">8</label>
+  <input type="radio" id="score128" name="question12" value="8">
+  <label for="score129">9</label>
+  <input type="radio" id="score129" name="question12" value="9">
+  <label for="score120">10</label>
+  <input type="radio" id="score120" name="question12" value="10">
 </fieldset>
 </div><br/>
 
@@ -391,9 +401,11 @@
     <label for="edu3">중립</label>
     <input type="radio" id="edu3" name="edu" value="3">
   </fieldset>
-
+  <h3>근무연수(연)</h3>
   <input type="number" name="input1" id="input1" placeholder="근무연수를 입력하세요(예 1년5개월이면 1)"/>
+  <h3>근무연수(월)</h3>
   <input type="number" name="input2" id="input2" placeholder="근무월수를 입력하세요(예 1년5개월이면 5)"/>
+  <h3>나이</h3>
   <input type="number" name="input3" id="input3" placeholder="나이를 입력하세요"/>
   </div>
 </fieldset>
