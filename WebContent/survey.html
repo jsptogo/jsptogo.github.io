@@ -1,0 +1,294 @@
+<!doctype html><!-- survey.html -->
+<html>
+<head>
+<meta charset="utf-8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+<title>헤더 문자열 1</title>
+<link rel="stylesheet" href="http://code.jquery.com/mobile/1.4.5/jquery.mobile-1.4.5.min.css" />
+<script src="http://code.jquery.com/jquery-1.11.1.min.js"></script>
+<script src="http://code.jquery.com/mobile/1.4.5/jquery.mobile-1.4.5.min.js"></script>
+<style>
+@media only screen and (max-width: 600px) {  
+  body {font-size: 15px;} 
+}
+</style>
+</head>
+<body>
+<div data-role="page">
+<header data-role="header">
+  <h1>워라밸 설문</h1>
+</header>
+<section  data-role="content" class="content">
+
+<div class="ui-body ui-body-a">
+<fieldset  data-role="controlgroup"  data-type="horizontal" data-mini="true">
+  <h3>안녕하세요?</h3>
+  <h3>본 설문지는 낙관성과 일-삶-균형(Work-Life-Balance, 워라밸)이 신뢰와 행복에 미치는 영향에 대해 알아보기 위한 것입니다.
+       문항을 읽고 처음 생각하거나 느끼는 정도를 나타내는 숫자 부분에 클릭해 주시기 바랍니다.  
+  </h3>
+  <h3>귀하의 응답 내용은 익명으로 통계 처리되며, 통계법 제33조(비밀의 보호) 제1항 및 제2항에 의거하여 비밀이 보장됩니다.
+       귀하의 의견은 논문을 위한 통계분석의 자료로만 사용되며 이외의 목적으로는 절대 사용되지 않음을 알려드립니다.
+       귀하의 성실한 응답은 연구목적 달성에 큰 도움이 될 것입니다.  감사합니다. 연구진 일동
+  </h3>
+</fieldset>
+</div>
+<br/>
+
+
+<form  action="http://jsptogo.herokuapp.com/jspsrc/survey.jsp"   method="post">
+
+<div data-role="fieldcontain">
+
+<div class="ui-body ui-body-a">
+<fieldset  data-role="controlgroup"  data-type="horizontal" data-mini="true">
+  <h3>설문 1. 전반적으로 나의 인생은 내가 이상적으로 여기는 모습에 가깝다.</h3>
+  <label for="score011">전혀못느낌</label>
+  <input type="radio" id="score011" name="question01" value="1">
+  <label for="score012">못느낌</label>
+  <input type="radio" id="score012" name="question01" value="2">
+  <label for="score013">반반</label>
+  <input type="radio" id="score013" name="question01" value="3" checked>
+  <label for="score014">가끔느낌</label>
+  <input type="radio" id="score014" name="question01" value="4">
+  <label for="score015">항상느낌</label>
+  <input type="radio" id="score015" name="question01" value="5">
+</fieldset>
+</div>
+<br/>
+
+<div class="ui-body ui-body-a">
+<fieldset  data-role="controlgroup"  data-type="horizontal" data-mini="true">
+  <h3>설문 2. 내 인생의 여건은 아주 좋은 편이다.</h3>
+  <label for="score021">매우이의</label>
+  <input type="radio" id="score021" name="question02" value="1">
+  <label for="score022">이의</label>
+  <input type="radio" id="score022" name="question02" value="2">
+  <label for="score023">중립</label>
+  <input type="radio" id="score023" name="question02" value="3" checked>
+  <label for="score024">동의</label>
+  <input type="radio" id="score024" name="question02" value="4">
+  <label for="score025">매우동의</label>
+  <input type="radio" id="score025" name="question02" value="5">
+</fieldset>
+</div>
+<br/><br/>
+
+<div class="ui-body ui-body-a">
+<fieldset  data-role="controlgroup"  data-type="horizontal" data-mini="true">
+  <h3>설문 3. 나는 나의 삶에 만족한다.</h3>
+  <label for="score031">매우이의</label>
+  <input type="radio" id="score031" name="question03" value="1">
+  <label for="score032">이의</label>
+  <input type="radio" id="score032" name="question03" value="2">
+  <label for="score033">중립</label>
+  <input type="radio" id="score033" name="question03" value="3" checked>
+  <label for="score034">동의</label>
+  <input type="radio" id="score034" name="question03" value="4">
+  <label for="score035">매우동의</label>
+  <input type="radio" id="score035" name="question03" value="5">
+</fieldset>
+</div>
+<br/>
+
+<div class="ui-body ui-body-a">
+<fieldset  data-role="controlgroup"  data-type="horizontal" data-mini="true">
+  <h3>설문 4. 지금까지 나는 내 인생에서 원하는 중요한 것들을 이루어 냈다.</h3>
+  <label for="score041">매우이의</label>
+  <input type="radio" id="score041" name="question04" value="1">
+  <label for="score042">이의</label>
+  <input type="radio" id="score042" name="question04" value="2">
+  <label for="score043">중립</label>
+  <input type="radio" id="score043" name="question04" value="3" checked>
+  <label for="score044">동의</label>
+  <input type="radio" id="score044" name="question04" value="4">
+  <label for="score045">매우동의</label>
+  <input type="radio" id="score045" name="question04" value="5">
+</fieldset>
+</div><br/>
+
+<div class="ui-body ui-body-a">
+<fieldset  data-role="controlgroup"  data-type="horizontal" data-mini="true">
+  <h3>설문 5. 다시 태어난다 해도 나는 지금처럼 살아갈 것이다.</h3>
+  <label for="score051">매우이의</label>
+  <input type="radio" id="score051" name="question05" value="1">
+  <label for="score052">이의</label>
+  <input type="radio" id="score052" name="question05" value="2">
+  <label for="score053">중립</label>
+  <input type="radio" id="score053" name="question05" value="3" checked>
+  <label for="score054">동의</label>
+  <input type="radio" id="score054" name="question05" value="4">
+  <label for="score055">매우동의</label>
+  <input type="radio" id="score055" name="question05" value="5">
+</fieldset>
+</div><br/>
+
+<div class="ui-body ui-body-a">
+<fieldset  data-role="controlgroup"  data-type="horizontal" data-mini="true">
+  <h3>설문 6. 나는 직장에서 나에게 맡겨진 일을 수행하면서 즐거움을 느낀다.</h3>
+  <label for="score061">매우이의</label>
+  <input type="radio" id="score061" name="question06" value="1">
+  <label for="score062">이의</label>
+  <input type="radio" id="score062" name="question06" value="2">
+  <label for="score063">중립</label>
+  <input type="radio" id="score063" name="question06" value="3" checked>
+  <label for="score064">동의</label>
+  <input type="radio" id="score064" name="question06" value="4">
+  <label for="score065">매우동의</label>
+  <input type="radio" id="score065" name="question06" value="5">
+</fieldset>
+</div><br/>
+
+<div class="ui-body ui-body-a">
+<fieldset  data-role="controlgroup"  data-type="horizontal" data-mini="true">
+  <h3>설문 7. 나는 직장 일을 하면서 지루함을 느낀 적이 거의 없다.</h3>
+  <label for="score071">매우이의</label>
+  <input type="radio" id="score071" name="question07" value="1">
+  <label for="score072">이의</label>
+  <input type="radio" id="score072" name="question07" value="2">
+  <label for="score073">중립</label>
+  <input type="radio" id="score073" name="question07" value="3" checked>
+  <label for="score074">동의</label>
+  <input type="radio" id="score074" name="question07" value="4">
+  <label for="score075">매우동의</label>
+  <input type="radio" id="score075" name="question07" value="5">
+</fieldset>
+</div><br/>
+
+<div class="ui-body ui-body-a">
+<fieldset  data-role="controlgroup"  data-type="horizontal" data-mini="true">
+  <h3>설문 8. 나는 최근 1년간 지금 하고 있는 일이 아닌 다른 직장을 찾아봐야겠다고 심각하게 고민한 적이 없다.</h3>
+  <label for="score081">매우이의</label>
+  <input type="radio" id="score081" name="question08" value="1">
+  <label for="score082">이의</label>
+  <input type="radio" id="score082" name="question08" value="2">
+  <label for="score083">중립</label>
+  <input type="radio" id="score083" name="question08" value="3" checked>
+  <label for="score084">동의</label>
+  <input type="radio" id="score084" name="question08" value="4">
+  <label for="score085">매우동의</label>
+  <input type="radio" id="score085" name="question08" value="5">
+</fieldset>
+</div><br/>
+
+<div class="ui-body ui-body-a">
+<fieldset  data-role="controlgroup"  data-type="horizontal" data-mini="true">
+  <h3>설문 9. 나는 전반적으로 현재 직장생활에 대해 만족한다.</h3>
+  <label for="score091">매우이의</label>
+  <input type="radio" id="score091" name="question09" value="1">
+  <label for="score092">이의</label>
+  <input type="radio" id="score092" name="question09" value="2">
+  <label for="score093">중립</label>
+  <input type="radio" id="score093" name="question09" value="3" checked>
+  <label for="score094">동의</label>
+  <input type="radio" id="score094" name="question09" value="4">
+  <label for="score095">매우동의</label>
+  <input type="radio" id="score095" name="question09" value="5">
+</fieldset>
+</div><br/>
+
+<div class="ui-body ui-body-a">
+<fieldset  data-role="controlgroup"  data-type="horizontal" data-mini="true">
+  <h3>설문 10. 나는 나와 내가 하는 일이 잘 맞는다고 생각한다.</h3>
+  <label for="score101">매우이의</label>
+  <input type="radio" id="score101" name="question10" value="1">
+  <label for="score102">이의</label>
+  <input type="radio" id="score102" name="question10" value="2">
+  <label for="score103">중립</label>
+  <input type="radio" id="score103" name="question10" value="3" checked>
+  <label for="score104">동의</label>
+  <input type="radio" id="score104" name="question10" value="4">
+  <label for="score105">매우동의</label>
+  <input type="radio" id="score105" name="question10" value="5">
+</fieldset>
+</div><br/>
+
+<div class="ui-body ui-body-a">
+<fieldset  data-role="controlgroup"  data-type="horizontal" data-mini="true">
+  <h3>설문 11. 모든 점을 고려해 볼 때, 당신은 자신의 생활에 어느 정도 만족하십니까?(10점만점)</h3>
+  <label for="score111">1</label>
+  <input type="radio" id="score111" name="question11" value="1">
+  <label for="score112">2</label>
+  <input type="radio" id="score112" name="question11" value="2">
+  <label for="score113">3</label>
+  <input type="radio" id="score113" name="question11" value="3">
+  <label for="score114">4</label>
+  <input type="radio" id="score114" name="question11" value="4">
+  <label for="score115">5</label>
+  <input type="radio" id="score115" name="question11" value="5">
+  <label for="score116">6</label>
+  <input type="radio" id="score116" name="question11" value="6" checked>
+  <label for="score117">7</label>
+  <input type="radio" id="score117" name="question11" value="7">
+  <label for="score118">8</label>
+  <input type="radio" id="score118" name="question11" value="8">
+  <label for="score119">9</label>
+  <input type="radio" id="score119" name="question11" value="9">
+  <label for="score110">10</label>
+  <input type="radio" id="score110" name="question11" value="10">
+</fieldset>
+</div><br/>
+
+<div class="ui-body ui-body-a">
+<fieldset  data-role="controlgroup"  data-type="horizontal" data-mini="true">
+  <h3>설문 12. 모든 점을 고려해 볼 때, 당신은 스스로 얼마나 행복하다고 생각하십니까?(10점만점)</h3>
+  <label for="score121">1</label>
+  <input type="radio" id="score121" name="question12" value="1">
+  <label for="score122">2</label>
+  <input type="radio" id="score122" name="question12" value="2">
+  <label for="score123">3</label>
+  <input type="radio" id="score123" name="question12" value="3">
+  <label for="score124">4</label>
+  <input type="radio" id="score124" name="question12" value="4">
+  <label for="score125">5</label>
+  <input type="radio" id="score125" name="question12" value="5">
+  <label for="score126">6</label>
+  <input type="radio" id="score126" name="question12" value="6" checked>
+  <label for="score127">7</label>
+  <input type="radio" id="score127" name="question12" value="7">
+  <label for="score128">8</label>
+  <input type="radio" id="score128" name="question12" value="8">
+  <label for="score129">9</label>
+  <input type="radio" id="score129" name="question12" value="9">
+  <label for="score120">10</label>
+  <input type="radio" id="score120" name="question12" value="10">
+</fieldset>
+</div><br/>
+
+<fieldset>
+  <h3>응답자 정보</h3>
+  <div class="ui-body ui-body-a">
+  <fieldset  data-role="controlgroup"  data-type="horizontal" data-mini="true">
+    <h3>성별</h3>
+    <label for="gender1">여자</label>
+    <input type="radio" id="gender1" name="gender" value="1" checked>
+    <label for="gender2">남자</label>
+    <input type="radio" id="gender2" name="gender" value="2">
+  </fieldset>
+  <fieldset  data-role="controlgroup"  data-type="horizontal" data-mini="true">
+    <h3>교육수준</h3>
+    <label for="edu1">고줄</label>
+    <input type="radio" id="edu1" name="edu" value="1" checked>
+    <label for="edu2">대졸</label>
+    <input type="radio" id="edu2" name="edu" value="2">
+    <label for="edu3">대학원졸</label>
+    <input type="radio" id="edu3" name="edu" value="3">
+  </fieldset>
+  <h3>근무연수(연)</h3>
+  <input type="number" name="input1" id="input1" placeholder="근무연수를 입력하세요(예 1년5개월이면 1)"/>
+  <h3>근무연수(월)</h3>
+  <input type="number" name="input2" id="input2" placeholder="근무월수를 입력하세요(예 1년5개월이면 5)"/>
+  <h3>나이</h3>
+  <input type="number" name="input3" id="input3" placeholder="나이를 입력하세요"/>
+  </div>
+</fieldset>
+
+</div><br/>
+<button type="submit"  data-role="button">설문완료</button>
+</form>
+</section>
+
+<footer  data-role="footer" data-id="footerid1" data-position="fixed">
+  <h4>20XX Made by Korea. All rights reserved.</h4>
+</footer>
+</div>
+</body></html>

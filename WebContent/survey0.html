@@ -1,0 +1,776 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=euc-kr" />
+<title>의견 조사</title>
+<script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.6.4/jquery.min.js"></script>
+<style type="text/css">
+	*{margin:0;padding:0;}
+    body { background-color:#666;}
+    em { font-weight:bold; font-style:normal; letter-spacing: 1px;}
+    ul {*zoom:1; list-style:none;margin:0 auto;}
+    li {padding:0.4%;}
+    dl {height:40px;width:500px;}
+    * html li{height:20px;}
+    li ul li{height:20px;}
+    .hastextarea {height:160px;padding-top:15px;}
+    span{padding-left:5px;}
+    table {width: 95%;}
+    table > thead{text-align: center;}
+    table thead th,  table tbody td {border: 1px solid #D0D0D0;text-align:center;}
+    table .evenrow {background-color: #EEF1F4;}
+    table caption {display:none;}
+    thead tr td {font-weight:bold;width:10%; letter-spacing: 1px;}
+    tbody tr td {letter-spacing: 1px;}
+    tbody tr{border: 0.1px solid;}
+    tbody .subtitle{font-weight:bold;}
+    thead tr td {width:15%}
+    thead tr td.gubn{width:27%}
+    #wrap{ width:750px; margin:0 auto; font-size:12px; background-color:white; }
+    #header {margin-top:15px;text-align: center; background-color:#fff;}
+    #header img{width:750px;}
+    #footer{text-align: center;}
+	#container {width:95%; margin:0 auto; }
+	.btnGroup { text-align:right; padding:20px;}
+	.issueBefore {background:  url("http://www.itfind.or.kr/itfind/pollResources/images/before.png") left 50% no-repeat; border:none; width:105px; height:30px; color:#496088; font-weight:bold;}
+	.issueSubmit {background:  url("http://www.itfind.or.kr/itfind/pollResources/images/next.png") right 50% no-repeat; border:none; width:105px; height:30px; color:#496088; font-weight:bold; cursor:pointer;}
+	.issueGroup>div{ padding-top:15px;}
+	.issueGroup{padding-top:20px;}
+    .issuehead{width:95%;}
+	.hidden {display:none;} 
+	.end{float:none;padding-left:35px;padding-top:35px;}
+	.left20 { margin-left:20px;}
+	p.title{margin: 0 15px 0 5px; padding: 8px; border: 1px solid rgb(0, 0, 0); background: rgb(0, 0, 0); color: #fff; font-weight: bold; font-size: 14px; text-align: center; margin-bottom: 0.4em;}
+    /* 헤더값에 대한 css 적용 */
+    div.issueGroupHeader > p{
+    border:double; font-size:14px; width:85%; vertical-align: middle;  margin: auto; height: 500px; padding: 20px 15px 0px 20px; letter-spacing: 1px; word-spacing: 1px;
+    }
+    div.issue6 ul li {text-align: left;}
+    /* 기본 표(세로테이블)   */
+ table.chart { border-collapse:collapse; width:100%; font-size:12px;line-height:18px;border-top:2px solid #498fd0;margin-bottom:10px;}
+ table.chart th,  table.chart td {border: 1px solid #D0D0D0;padding:5px 10px;text-align:center;}
+ table.chart thead th {background:#e3eaf1;border:1px solid #D0D0D0;text-align:center;color:#000000;}
+ table.chart tbody th{color:#000;}
+ table.chart tbody td{background:#fff;}
+ table.chart tbody strong{color:#000;}
+ table.chart td.alL{text-align:left;}
+ table.chart td.bg{background:#F5F5F5;}
+ table.chart tbody th.bg{background:#F5F5F5;color:#000;} 
+ table.chart tfoot{color:#000;}
+ div.issue1 table tr td ul li{
+ font-size: 0.9em;
+ }
+ .text-left{text-align: left;}
+ .text-rigth{text-align: right;}
+ .text-center{text-align: center;}
+ /*폰트태그 글자크기 조절 */
+div font{
+ font-weight:bold;
+ font-size:1em;
+ }
+ .tdWtih10{
+    width: 10%; 
+ }   
+ .tdWtih8{
+    width: 8%; 
+ }   
+ .tdWtih9{
+    width: 9%; 
+ }   
+ .tdWtih5{
+    width: 5%; 
+ }   
+</style>
+
+<script type="text/javascript">
+$(document).ready(function(){
+       
+       $('input[name=issue3]').change(function(){
+           var name ="#issue3_12";
+           inputOpenNClose(name);
+       });
+       $('input[name=issue4]').change(function(){
+           var name ="#issue4_4";
+           inputOpenNClose(name);
+       });
+       $('input[name=issue5]').change(function(){
+           var name ="#issue5_5";
+           inputOpenNClose(name);
+       });
+       $('input[name=issue7]').change(function(){
+           var name ="#issue7_6";
+           inputOpenNClose(name);
+       });
+       $('input[name=issue8]').change(function(){
+           var name ="#issue8_6";
+           inputOpenNClose(name);
+       });
+       $('input[name=issue9]').change(function(){
+           var name ="#issue9_6";
+           inputOpenNClose(name);
+       });
+       $('input[name=issue12]').change(function(){
+           var name ="#issue12_8";
+           inputOpenNClose(name);
+       });
+       
+       $(".divide1").css("display", "none");
+       $(".divide2").css("display", "none");
+       $(".divide3").css("display", "none");
+       
+       //조건에 따른 항목 조절
+       $('input[name=issue1]').change(function(){
+           if($(this).val() == '2'){
+        	   $(".divide1").css("display", "none");
+        	   $(".divide2").css("display", "none");
+        	   $(".divide3").css("display", "block");
+           }else{
+        	   $(".divide1").css("display", "block");
+        	   $(".divide2").css("display", "none");
+        	   $(".divide3").css("display", "none");
+           }
+           $('input[name=issue2]').attr('checked', false);
+           $('input[name=issue3]').attr('checked', false);
+           $('input[name=issue4]').attr('checked', false);
+           $('input[name=issue5]').attr('checked', false);
+           $('input[name=issue6]').attr('checked', false);
+           $('input[name=issue7]').attr('checked', false);
+           $('input[name=issue8]').attr('checked', false);
+           $('input[name=issue9]').attr('checked', false);
+           $('input[name=issue10]').attr('checked', false);
+           $('input[name=issue11]').attr('checked', false);
+           $('input[name=issue12]').attr('checked', false);
+       });
+       
+       $('input[name=issue6]').change(function(){
+           if($(this).val() == '1' || $(this).val() == '2'){
+        	   $(".divide2").css("display", "block");
+        	   $(".divide3").css("display", "block");
+           }else{
+        	   $(".divide2").css("display", "none");
+        	   $(".divide3").css("display", "block");
+           }
+           $('input[name=issue7]').attr('checked', false);
+           $('input[name=issue8]').attr('checked', false);
+           $('input[name=issue9]').attr('checked', false);
+           $('input[name=issue10]').attr('checked', false);
+           $('input[name=issue11]').attr('checked', false);
+           $('input[name=issue12]').attr('checked', false);
+       });
+});
+	
+function pollsubmit(obj){
+	hiddenSet();
+}
+//기타 열고 닫기
+function inputOpenNClose(name){
+    if($(name).prop("checked")){
+        $(name+"_text").attr("readonly",false).attr("disabled",false); //입력가능
+        $(name+"_text").focus();
+    }else{
+        $(name+"_text").attr("disabled",true).attr("readonly",false);
+        $(name+"_text").val("");
+    }
+}
+function hiddenSet() {
+    var data1="";
+    var data3="";
+        //문3-12
+        $("#submitform>#subjective01").val($("#issue3_12_text").val());
+        //문4-4
+        $("#submitform>#subjective02").val($("#issue4_4_text").val());        
+      	//문5-5
+        $("#submitform>#subjective03").val($("#issue5_5_text").val());
+      	//문7-6
+        $("#submitform>#subjective04").val($("#issue7_6_text").val());
+      	//문8-6
+        $("#submitform>#subjective05").val($("#issue8_6_text").val());
+      	//문9-6
+        $("#submitform>#subjective06").val($("#issue9_6_text").val());
+      	//문12-8
+        $("#submitform>#subjective07").val($("#issue12_8_text").val());
+      
+      	//문1
+        $("#submitform>#objective01").val($(".issue1 input[name=issue1]:checked").val());
+        //문2
+        $("#submitform>#objective02").val($(".issue2 input[name=issue2]:checked").val());
+        //문3
+        $("#submitform>#objective03").val($(".issue3 input[name=issue3]:checked").val());
+        //문4
+        $("#submitform>#objective04").val($(".issue4 input[name=issue4]:checked").val());
+        //문5
+        $("#submitform>#objective05").val($(".issue5 input[name=issue5]:checked").val());
+        //문6
+        $("#submitform>#objective06").val($(".issue6 input[name=issue6]:checked").val());
+        //문7
+        $("#submitform>#objective07").val($(".issue7 input[name=issue7]:checked").val());
+        //문8
+        $("#submitform>#objective08").val($(".issue8 input[name=issue8]:checked").val());
+        //문9
+        $("#submitform>#objective09").val($(".issue9 input[name=issue9]:checked").val());
+        //문10
+        $("#submitform>#objective10").val($(".issue10 input[name=issue10]:checked").val());
+      	//문11
+        $("#submitform>#objective11").val($(".issue11 input[name=issue11]:checked").val());
+      	//문12
+        //$("#submitform>#objective12").val($(".issue12 input[name=issue12]:checked").val());
+      	
+      	//문 12 체크박스임
+             	
+      	var issue12Checkbox = $("input:checkbox[name='issue12']:checked");
+      	var issue12Val = '';
+      	if(issue12Checkbox.length != '2'){
+      		alert('12번 항목은 2가지를 골라 주세요.');
+      		return;
+      	}
+      	
+      	issue12Checkbox.each(function(){
+      		issue12Val = issue12Val + $(this).val()+'$$';	
+      	});
+      	$("#submitform>#objective12").val(issue12Val);
+      	
+       if($("#submitform>#objective01").val() == ''){
+		alert('1번 항목에 값을 입력해 주세요.');
+			return;
+		}
+       
+       if($("#submitform>#objective01").val() == '1'){
+    	   if($("#submitform>#objective02").val() == ''){
+    			alert('2번 항목에 값을 입력해 주세요.');
+    			return;
+    		}
+    		if($("#submitform>#objective03").val() == ''){
+    			alert('3번 항목에 값을 입력해 주세요.');
+    			return;
+    		}
+    		if($("#submitform>#objective04").val() == ''){
+    			alert('4번 항목에 값을 입력해 주세요.');
+    			return;
+    		}
+    		if($("#submitform>#objective05").val() == ''){
+    			alert('5번 항목에 값을 입력해 주세요.');
+    			return;
+    		}
+    		if($("#submitform>#objective06").val() == ''){
+    			alert('6번 항목에 값을 입력해 주세요.');
+    			return;
+    		}
+       }
+
+       if($("#submitform>#objective06").val() == '1' || $("#submitform>#objective06").val() == '2'){
+    	   if($("#submitform>#objective07").val() == ''){
+    			alert('7번 항목에 값을 입력해 주세요.');
+    			return;
+    		}
+    		if($("#submitform>#objective08").val() == ''){
+    			alert('8번 항목에 값을 입력해 주세요.');
+    			return;
+    		}
+    		if($("#submitform>#objective09").val() == ''){
+    			alert('9번 항목에 값을 입력해 주세요.');
+    			return;
+    		}if($("#submitform>#objective10").val() == ''){
+    			alert('10번 항목에 값을 입력해 주세요.');
+    			return;
+    		}if($("#submitform>#objective11").val() == ''){
+    			alert('11번 항목에 값을 입력해 주세요.');
+    			return;
+    		}if($("#submitform>#objective12").val() == ''){
+    			alert('12번 항목에 값을 입력해 주세요.');
+    			return;
+    		}
+		}
+		
+		//3번 기타 체크
+		if ($("#submitform>#objective03").val() == '12') {
+			if ($("#submitform>#subjective01").val() == '') {
+
+				alert('3번 항목 기타에 값을 입력해 주세요.');
+				return;
+			}
+		}
+		//4번 기타 체크
+		if ($("#submitform>#objective04").val() == '4') {
+			if ($("#submitform>#subjective02").val() == '') {
+
+				alert('4번 항목 기타에 값을 입력해 주세요.');
+				return;
+			}
+		}
+		//5번 기타 체크
+		if ($("#submitform>#objective05").val() == '5') {
+			if ($("#submitform>#subjective03").val() == '') {
+
+				alert('5번 항목 기타에 값을 입력해 주세요.');
+				return;
+			}
+		}
+		//7번 기타 체크
+		if ($("#submitform>#objective07").val() == '6') {
+			if ($("#submitform>#subjective04").val() == '') {
+
+				alert('7번 항목 기타에 값을 입력해 주세요.');
+				return;
+			}
+		}
+		//8번 기타 체크
+		if ($("#submitform>#objective08").val() == '6') {
+			if ($("#submitform>#subjective05").val() == '') {
+
+				alert('8번 항목 기타에 값을 입력해 주세요.');
+				return;
+			}
+		}
+		//9번 기타 체크
+		if ($("#submitform>#objective09").val() == '6') {
+			if ($("#submitform>#subjective06").val() == '') {
+
+				alert('9번 항목 기타에 값을 입력해 주세요.');
+				return;
+			}
+		}
+		
+		//12번 기타 체크
+		if ($("#submitform>#objective12").val() == '8') {
+			if ($("#submitform>#subjective07").val() == '') {
+				alert('12번 항목 기타에 값을 입력해 주세요.');
+				return;
+			}
+		}
+		if (confirm("작성을 완료 하시겠습니까?")) {
+			form1.submit();
+		} else {
+			return;
+		}
+	}
+</script>
+</head>
+<body> 
+<div id="wrap">
+	<div id="header">
+        <p class="title">의견 조사</p>
+    </div>
+	<div id="container">
+		
+<div class="section1">
+	<div class="issueGroup">
+        <p class="title" style="text-align:left;background:white;color:#000">
+       안녕하세요<br/><br/>
+  여러분을 대상으로 설문조사를 실시하고자 합니다.
+  <br/><br/>
+  본 설문을 작성하기 위한 소요 시간은 약 5분 정도로 예상됩니다. 바쁘시겠지만 잠시만 시간을 내시어 설문에 응해 주시면 대단히 감사하겠습니다. 
+  수집된 개인 정보는 외부에 절대 공개되지 않으며 조사 결과는 연구용 기초 자료로만 사용될 것입니다.
+  <br/><br/>
+  본 설문과 관련하여 궁금하신 점은 홍길동으로 문의해 주시기 바랍니다.
+        </p>
+        
+        <p class="title" style="margin-top:20px;">
+        먼저 자료 분류를 위해 귀하의 개인적 사항에 대해서 몇 가지 여쭙겠습니다.
+        </p>
+        <div class="issue1">
+            <ul>
+                <li class="issuehead">
+                    <em>1. 귀하는 현재 기업에 종사하고 계십니까?</em>
+                </li>
+                <li>
+                    <ul>
+                        <li>
+                            <input type="radio" id="issue1_1" name="issue1" value="1"/><label for="issue1_1">예</label>
+                        </li>
+                        <li>
+                            <input type="radio" id="issue1_2" name="issue1" value="2" /><label for="issue1_2">아니요</label>
+                        </li>
+                    </ul>
+                </li>
+            </ul>
+        </div>
+        
+        <div class="divide1">
+	        <div class="issue2">
+	            <ul>
+	                <li class="issuehead">
+	                    <em>2. 기업에 종사하고 계시다면, 현재 종사하고 계신 기업은 다음 중 어떤 유형에 해당하십니까?</em>
+	                </li>
+	                <li>
+	                    <ul>
+	                        <li>
+	                            <input type="radio" id="issue2_1" name="issue2" value="1"/><label for="issue2_1"> ICT 대기업 (연매출 1조 원 이상)</label>
+	                        </li>
+	                        <li>
+	                            <input type="radio" id="issue2_2" name="issue2" value="2" /><label for="issue2_2"> ICT 중견기업 (연매출 1천억 원 이상)</label>
+	                        </li>
+	                        <li>
+	                            <input type="radio" id="issue2_3" name="issue2" value="3" /><label for="issue2_3"> ICT 중소기업 (연매출 100~1,000억 원)</label>
+	                        </li>
+	                        <li>
+	                            <input type="radio" id="issue2_4" name="issue2" value="4" /><label for="issue2_4"> ICT 스타트업 (연매출 100억 원 미만)</label>
+	                        </li>
+	                    </ul>
+	                </li>
+	            </ul>
+	        </div>
+	         <div class="issue3">
+	            <ul>
+	                <li class="issuehead">
+	                    <em>3. 현재 기업의 구체적인 업종 유형은 다음 중 무엇입니까?</em>
+	                </li>
+	                <li>
+	                	<ul>
+			                <li>
+			                    <div style="float:left;width:300px;"><input type="radio" id="issue3_1" name="issue3" value="1" /><label for="issue3_1" style="width:80px;"> 반도체 (부품/소재/장비 포함)</label></div>
+			                    <div><input type="radio" id="issue3_2" name="issue3" value="2" /><label for="issue3_2"> 디스플레이 패널 (부품/소재/장비 포함)</label></div>
+			                </li>
+			                <li>    
+			                    <div style="float:left;width:300px;"><input type="radio" id="issue3_3" name="issue3" value="3" /><label for="issue3_3"> 기타 부품/소재 (PCB/케이스 등)</label></div>
+			                    <div><input type="radio" id="issue3_4" name="issue3" value="4" /><label for="issue3_4"> 컴퓨팅 하드웨어 (PC/서버/스토리지)</label></div>
+			                </li>
+			                <li>    
+			                    <div style="float:left;width:300px;"><input type="radio" id="issue3_5" name="issue3" value="5" /><label for="issue3_5"> 네트워크 장비 (교환전송장비/중계기/안테나)</label></div>
+			                    <div><input type="radio" id="issue3_6" name="issue3" value="6" /><label for="issue3_6"> 스마트폰/기타통신용단말</label></div>
+			                </li>
+			                <li>    
+			                    <div style="float:left;width:300px;"><input type="radio" id="issue3_7" name="issue3" value="7" /><label for="issue3_7"> 가전 (TV/냉장고/세탁기 등)</label></div>
+			                    <div><input type="radio" id="issue3_8" name="issue3" value="8" /><label for="issue3_8"> 소프트웨어</label></div>
+			                </li>
+			                <li>    
+			                    <div style="float:left;width:300px;"><input type="radio" id="issue3_9" name="issue3" value="9" /><label for="issue3_9"> IT서비스 (SI/NI/컨설팅/교육 등)</label></div>
+			                    <div><input type="radio" id="issue3_10" name="issue3" value="10" /><label for="issue3_10"> 방송통신 서비스</label></div>
+			                </li>
+			                <li>    
+			                    <div style="float:left;width:300px;"><input type="radio" id="issue3_11" name="issue3" value="11" /><label for="issue3_11"> 콘텐츠/게임/인터넷</label></div>
+			                    <div><input type="radio" id="issue3_12" name="issue3" value="12" /><label for="issue3_12"> 기타</label>
+			                    (적어주십시오:<input type="text" id="issue3_12_text" name="issue3_12_text" size="20" disabled="disabled"/>)</div>
+			                </li>
+			            </ul>
+			        </li>
+	            </ul>
+	        </div>
+	        <div class="issue4">
+	            <ul>
+	                <li class="issuehead">
+	                    <em>4. 현재 종사하고 계신 기업에서 귀하의 직책은 어떻게 되십니까?</em>
+	                </li>
+	                <li>
+		                <ul>
+			                <li>
+			                    <input type="radio" id="issue4_1" name="issue4" value="1" /><label for="issue4_1"> 대표 또는 중역</label>
+			                </li>
+			                <li>
+			                    <input type="radio" id="issue4_2" name="issue4" value="2" /><label for="issue4_2"> 고급/중간 관리자</label>
+			                </li>
+			                <li>
+			                    <input type="radio" id="issue4_3" name="issue4" value="3" /><label for="issue4_3"> 실무자</label>
+			                </li>
+			                <li>
+			                    <input type="radio" id="issue4_4" name="issue4" value="4" /><label for="issue4_4"> 기타</label>
+			                    (적어주십시오:<input type="text" id="issue4_4_text" name="issue4_4_text" size="20" disabled="disabled"/>)
+			                </li>
+		                </ul>
+	                </li>
+	            </ul>
+	        </div>
+	        
+	        <p class="title" style="margin-top:20px;">
+	       귀하의 의견을 여쭙겠습니다.
+	        </p>
+	        <div class="issue5">
+	            <ul>
+	                <li class="issuehead">
+	                    <em>5. 먼저 귀하가 종사하고 계신 회사가 관계가 있는지를 여쭙겠습니다.</em>
+	                </li>
+	                <li>
+	                    <ul>
+	                        <li>
+	                            <input type="radio" id="issue5_1" name="issue5" value="1" /><label for="issue5_1"> 수출입 거래 모두 하고 있다.</label>
+	                        </li>
+							<li>
+	                            <input type="radio" id="issue5_2" name="issue5" value="2" /><label for="issue5_2"> 주로 수출만 하고 있다.</label>
+	                        </li>
+	                        <li>
+	                            <input type="radio" id="issue5_3" name="issue5" value="3" /><label for="issue5_3"> 주로 수입만 하고 있다.</label>
+	                        </li>
+	                        <li>
+	                            <input type="radio" id="issue5_4" name="issue5" value="4" /><label for="issue5_4"> 수출입 거래가 없다.</label>
+	                        </li>
+	                        <li>
+	                            <input type="radio" id="issue5_5" name="issue5" value="5" /><label for="issue5_5"> 기타</label>
+	                            (적어주십시오:<input type="text" id="issue5_5_text" name="issue5_5_text" size="20" disabled="disabled"/>)
+	                        </li>
+	                    </ul>
+	                </li>
+	            </ul>
+	        </div>
+	        <div class="issue6">
+	            <ul>
+	                <li class="issuehead">
+	                    <em>6. 귀하가 종사하고 계신 기업에 어떤 영향이 있을 것으로 예상하십니까?</em>
+	                </li>
+	                <li>
+	                    <ul>
+	                        <li>
+	                            <input type="radio" id="issue6_1" name="issue6" value="1" /><label for="issue6_1"> 매우 부정적이다.</label>
+	                        </li>
+							<li>
+	                            <input type="radio" id="issue6_2" name="issue6" value="2" /><label for="issue6_2"> 약간 부정적이다.</label>
+	                        </li>
+	                        <li>
+	                            <input type="radio" id="issue6_3" name="issue6" value="3" /><label for="issue6_3"> 약간 긍정적이다.</label>
+	                        </li>
+	                        <li>
+	                            <input type="radio" id="issue6_4" name="issue6" value="4" /><label for="issue6_4"> 매우 긍정적이다.</label>
+	                        </li>
+	                        <li>
+	                            <input type="radio" id="issue6_5" name="issue6" value="5" /><label for="issue6_5"> 영향이 없다.</label>
+	                        </li>
+	                    </ul>
+	                </li>
+	            </ul>
+	        </div>
+        </div>
+        <div class="divide2">
+	        
+	        <div class="issue7">
+	            <ul>
+	                <li class="issuehead">
+	                    <em>7. 부정적 영향이 있다면, 어떤 영향이 가장 클 것으로 예상하십니까?</em>
+	                </li>
+	                <li>
+	                    <ul>
+	                        <li>
+	                            <input type="radio" id="issue7_1" name="issue7" value="1" /><label for="issue7_1"> 매출 감소</label>
+	                        </li>
+							<li>
+	                            <input type="radio" id="issue7_2" name="issue7" value="2" /><label for="issue7_2"> 이익/수익성 감소</label>
+	                        </li>
+	                        <li>
+	                            <input type="radio" id="issue7_3" name="issue7" value="3" /><label for="issue7_3"> 시장에서 경쟁력 저하</label>
+	                        </li>
+	                        <li>
+	                            <input type="radio" id="issue7_4" name="issue7" value="4" /><label for="issue7_4"> 사업 불확실성/리스크 증가</label>
+	                        </li>
+	                        <li>
+	                            <input type="radio" id="issue7_5" name="issue7" value="5" /><label for="issue7_5"> 제조원가 상승</label>
+	                        </li>
+	                        <li>
+	                            <input type="radio" id="issue7_6" name="issue7" value="6" /><label for="issue7_6"> 기타</label>
+	                            (적어주십시오:<input type="text" id="issue7_6_text" name="issue7_6_text" size="20" disabled="disabled"/>)
+	                        </li>
+	                    </ul>
+	                </li>
+	            </ul>
+	        </div>
+	        <div class="issue8">
+	            <ul>
+	                <li class="issuehead">
+	                    <em>8. 매출 감소가 예상된다면, 감소폭이 얼마나 될 것으로 예상하십니까?</em>
+	                </li>
+	                <li>
+	                    <ul>
+	                        <li>
+	                            <input type="radio" id="issue8_1" name="issue8" value="1" /><label for="issue8_1"> 0~-10%</label>
+	                        </li>
+							<li>
+	                            <input type="radio" id="issue8_2" name="issue8" value="2" /><label for="issue8_2"> -10% ~ -20%</label>
+	                        </li>
+	                        <li>
+	                            <input type="radio" id="issue8_3" name="issue8" value="3" /><label for="issue8_3"> -20% ~ -30%</label>
+	                        </li>
+	                        <li>
+	                            <input type="radio" id="issue8_4" name="issue8" value="4" /><label for="issue8_4"> -30% ~ -40%</label>
+	                        </li>
+	                        <li>
+	                            <input type="radio" id="issue8_5" name="issue8" value="5" /><label for="issue8_5"> -40% ~ -50%</label>
+	                        </li>
+	                        <li>
+	                            <input type="radio" id="issue8_6" name="issue8" value="6" /><label for="issue8_6"> 기타</label>
+	                            (적어주십시오:<input type="text" id="issue8_6_text" name="issue8_6_text" size="20" disabled="disabled"/>)
+	                        </li>
+	                    </ul>
+	                </li>
+	            </ul>
+	        </div>
+	        <div class="issue9">
+	            <ul>
+	                <li class="issuehead">
+	                    <em>9. 귀하의 기업은 사업 불확실성을 어떻게 해결할 계획이십니까?</em>
+	                </li>
+	                <li>
+	                    <ul>
+	                        <li>
+	                            <input type="radio" id="issue9_1" name="issue9" value="1" /><label for="issue9_1"> 부품/소재 도입선 다변화 (국내 조달)</label>
+	                        </li>
+							<li>
+	                            <input type="radio" id="issue9_2" name="issue9" value="2" /><label for="issue9_2"> 부품/소재 도입선 다변화 (해외 타국가 조달)</label>
+	                        </li>
+	                        <li>
+	                            <input type="radio" id="issue9_3" name="issue9" value="3" /><label for="issue9_3"> 자체개발/내재화 추진</label>
+	                        </li>
+	                        <li>
+	                            <input type="radio" id="issue9_4" name="issue9" value="4" /><label for="issue9_4"> 부품/소재 디자인 변경</label>
+	                        </li>
+	                        <li>
+	                            <input type="radio" id="issue9_5" name="issue9" value="5" /><label for="issue9_5"> 현재 별다른 대응방안 없음</label>
+	                        </li>
+	                        <li>
+	                            <input type="radio" id="issue9_6" name="issue9" value="6" /><label for="issue9_6"> 기타</label>
+	                            (적어주십시오:<input type="text" id="issue9_6_text" name="issue9_6_text" size="20" disabled="disabled"/>)
+	                        </li>
+	                    </ul>
+	                </li>
+	            </ul>
+	        </div>
+	        <div class="issue10">
+	            <ul>
+	                <li class="issuehead">
+	                    <em>10. 귀하가 종사하고 계신 기업은 앞으로 언제까지 지속하실 수 있을 것으로 예상하십니까?</em>
+	                </li>
+	                <li>
+	                    <ul>
+	                        <li>
+	                            <input type="radio" id="issue10_1" name="issue10" value="1" /><label for="issue10_1"> 1개월 이내</label>
+	                        </li>
+							<li>
+	                            <input type="radio" id="issue10_2" name="issue10" value="2" /><label for="issue10_2"> 1~3개월</label>
+	                        </li>
+	                        <li>
+	                            <input type="radio" id="issue10_3" name="issue10" value="3" /><label for="issue10_3"> 3~6개월</label>
+	                        </li>
+	                        <li>
+	                            <input type="radio" id="issue10_4" name="issue10" value="4" /><label for="issue10_4"> 6개월~1년</label>
+	                        </li>
+	                        <li>
+	                            <input type="radio" id="issue10_5" name="issue10" value="5" /><label for="issue10_5"> 1년 이상</label>
+	                        </li>
+	                    </ul>
+	                </li>
+	            </ul>
+	        </div>
+	        <div class="issue11">
+	            <ul>
+	                <li class="issuehead">
+	                    <em>11. 어느 정도의 시간이 필요할 것으로 예상하십니까?</em>
+	                </li>
+	                <li>
+	                    <ul>
+	                        <li>
+	                            <input type="radio" id="issue11_1" name="issue11" value="1" /><label for="issue11_1"> 6개월 이내</label>
+	                        </li>
+							<li>
+	                            <input type="radio" id="issue11_2" name="issue11" value="2" /><label for="issue11_2"> 6개월~1년</label>
+	                        </li>
+	                        <li>
+	                            <input type="radio" id="issue11_3" name="issue11" value="3" /><label for="issue11_3"> 1~3년</label>
+	                        </li>
+	                        <li>
+	                            <input type="radio" id="issue11_4" name="issue11" value="4" /><label for="issue11_4"> 3~5년</label>
+	                        </li>
+	                        <li>
+	                            <input type="radio" id="issue11_5" name="issue11" value="5" /><label for="issue11_5"> 5년 이상</label>
+	                        </li>
+	                    </ul>
+	                </li>
+	            </ul>
+	        </div>
+	        <div class="issue12">
+	            <ul>
+	                <li class="issuehead">
+	                    <em>12. 가장 바람직한 대응방안은 무엇인가요? 
+	                    <font color="red"><u>2가지</u></font>를 골라 주십시오.</em>
+	                </li>
+	                <li>
+	                    <ul>
+	                        <li>
+			                    <div style="float:left;width:300px;"><input type="checkbox" id="issue12_1" name="issue12" value="1" /><label for="issue12_1" style="width:80px;"> 자체개발/국산화 RD 지원</label></div>
+			                    <div><input type="checkbox" id="issue12_2" name="issue12" value="2" /><label for="issue12_2"> 수입선 다변화를 위한 무역 지원</label></div>
+			                </li>
+			                <li>    
+			                    <div style="float:left;width:300px;"><input type="checkbox" id="issue12_3" name="issue12" value="3" /><label for="issue12_3"> 피해업체 긴급경영안정자금 금융 지원</label></div>
+			                    <div><input type="checkbox" id="issue12_4" name="issue12" value="4" /><label for="issue12_4"> 세금감면/규제완화/통관완화</label></div>
+			                </li>
+			                <li>    
+			                    <div style="float:left;width:300px;"><input type="checkbox" id="issue12_5" name="issue12" value="5" /><label for="issue12_5"> 관련 국내인력양성/해외인재확보 지원</label></div>
+			                    <div><input type="checkbox" id="issue12_6" name="issue12" value="6" /><label for="issue12_6"> 대기업-중소기업 상생협력 제도 마련</label></div>
+			                </li>
+			                <li>    
+			                    <div style="float:left;width:300px;"><input type="checkbox" id="issue12_7" name="issue12" value="7" /><label for="issue12_7"> 해외 부품소재 기업 인수합병(MA) 지원</label></div>
+			                    <div><input type="checkbox" id="issue12_8" name="issue12" value="8" /><label for="issue12_8"> 기타</label>
+			                    (적어주십시오:<input type="text" id="issue12_8_text" name="issue12_8_text" size="20" disabled="disabled"/>)</div>
+			                </li>
+	                    </ul>
+	                </li>
+	            </ul>
+	        </div>
+        </div>
+        <div class="divide3">
+	        <div class="result" style="text-align:center;margin-top:20px;">
+	        	<p>◈◈◈ 설문에 응답해 주셔서 진심으로 감사드립니다 ◈◈◈</p>
+	        </div>
+        </div>
+    </div> <!--  end of issueGroup -->
+   
+        <form id="submitform" name="form1" action="http://mtm.itfind.or.kr/poll/addPollData.htm" method="post">
+        <input type="hidden"  name="researchGroup" value="0000" />
+        <input type="hidden"    name="userEmail"     value="@"/>
+            <input type="hidden" name="objective01" id="objective01" value=""/>
+            <input type="hidden" name="objective02" id="objective02" value=""/>
+            <input type="hidden" name="objective03" id="objective03" value=""/>
+            <input type="hidden" name="objective04" id="objective04" value=""/>
+            <input type="hidden" name="objective05" id="objective05" value=""/>
+            <input type="hidden" name="objective06" id="objective06" value=""/>
+            <input type="hidden" name="objective07" id="objective07" value=""/>
+            <input type="hidden" name="objective08" id="objective08" value=""/>
+            <input type="hidden" name="objective09" id="objective09" value=""/>
+            <input type="hidden" name="objective10" id="objective10" value=""/>
+            <input type="hidden" name="objective11" id="objective11" value=""/>
+            <input type="hidden" name="objective12" id="objective12" value=""/>
+            <input type="hidden" name="objective13" id="objective13" value=""/>
+            <input type="hidden" name="objective14" id="objective14" value=""/>
+            <input type="hidden" name="objective15" id="objective15" value=""/>
+            <input type="hidden" name="objective16" id="objective16" value=""/>
+            <input type="hidden" name="objective17" id="objective17" value=""/>
+            <input type="hidden" name="objective18" id="objective18" value=""/>
+            <input type="hidden" name="objective19" id="objective19" value=""/>
+            <input type="hidden" name="objective20" id="objective20" value=""/>
+            <input type="hidden" name="objective21" id="objective21" value=""/>
+            <input type="hidden" name="objective22" id="objective22" value=""/>
+            <input type="hidden" name="objective23" id="objective23" value=""/>
+            <input type="hidden" name="objective24" id="objective24" value=""/>
+            <input type="hidden" name="objective25" id="objective25" value=""/>
+            <input type="hidden" name="objective26" id="objective26" value=""/>
+            <input type="hidden" name="objective27" id="objective27" value=""/>
+            <input type="hidden" name="objective28" id="objective28" value=""/>
+            <input type="hidden" name="objective29" id="objective29" value=""/>
+            <input type="hidden" name="objective30" id="objective30" value=""/>
+            <input type="hidden" name="objective31" id="objective31" value=""/>
+            <input type="hidden" name="objective32" id="objective32" value=""/>
+            <input type="hidden" name="objective33" id="objective33" value=""/>
+            <input type="hidden" name="objective34" id="objective34" value=""/>
+            <input type="hidden" name="objective35" id="objective35" value=""/>
+            <input type="hidden" name="objective36" id="objective36" value=""/>
+            <input type="hidden" name="objective37" id="objective37" value=""/>
+            <input type="hidden" name="objective38" id="objective38" value=""/>
+            <input type="hidden" name="objective39" id="objective39" value=""/>
+            <input type="hidden" name="objective40" id="objective40" value=""/>
+            <input type="hidden" name="objective41" id="objective41" value=""/>
+            <input type="hidden" name="objective42" id="objective42" value=""/>
+            <input type="hidden" name="objective43" id="objective43" value=""/>
+            <input type="hidden" name="objective44" id="objective44" value=""/>
+        <input type="hidden" name="subjective01" id="subjective01" value=""/>
+        <input type="hidden" name="subjective02" id="subjective02" value=""/>
+        <input type="hidden" name="subjective03" id="subjective03" value=""/>
+        <input type="hidden" name="subjective04" id="subjective04" value=""/>
+        <input type="hidden" name="subjective05" id="subjective05" value=""/>
+        <input type="hidden" name="subjective06" id="subjective06" value=""/>
+        <input type="hidden" name="subjective07" id="subjective07" value=""/>
+        <input type="hidden" name="subjective08" id="subjective08" value="itfind"/>
+        
+        <div class="btnGroup">
+            <input id="issueSubmit" class="issueSubmit" type="button" src="/resources/images/next.png" value="설문 완료" onClick="javascript:pollsubmit();" />
+        </div>
+    </form>
+</div> <!-- end of section1 -->
+
+	</div><!-- end of container  -->
+</div>
+</body>
+</html>
