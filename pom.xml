@@ -58,7 +58,7 @@
   		<version>4.3.9.RELEASE</version></dependency>
  	<dependency><groupId>org.springframework</groupId>
     		<artifactId>spring-webmvc</artifactId>
-    		<version>4.3.9.RELEASE</version></dependency>
+    		<version>5.3.18</version></dependency>
   	<dependency><groupId>org.springframework</groupId>
   		<artifactId>spring-jdbc</artifactId>
   		<version>4.3.9.RELEASE</version></dependency>
